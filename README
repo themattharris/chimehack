@@ -1,0 +1,7 @@
+chimehack project for the unicef trick or treat project.
+
+structure
+- server: the rails server component
+  - requires ruby 1.9 and rails 4
+- client: the mobile application
+
