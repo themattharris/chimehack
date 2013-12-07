@@ -9,12 +9,23 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require bootstrap
+ *= require bootstrap-slider
  *= require_self
  *= require_tree .
  */
 
 body {
-  background-color: rgb(238,116,33);
+}
+
+table {
+  background-color: #FFF;
+}
+
+.header {
+  background-color: rgb(239,116,34);
+  margin-bottom: 1em;
+  margin-left: -10em;
+  margin-right: -10em;
 }
 
 .centered {
