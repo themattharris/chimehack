@@ -14,12 +14,12 @@ class Api::DonationsController < ApiController
   end
 
   def show_for_donor
-    @donations = Donation.find_all_by_donor_id(params[:id])
+    @donations = Donation.where(donor_id: params[:id])
     render_donations
   end
 
   def show_for_referrer
-    @donations = Donation.find_all_by_referrer_id(params[:id])
+    @donations = Donation.where(referrer_id: params[:id])
     render_donations
   end
 

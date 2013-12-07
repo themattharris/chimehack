@@ -9,12 +9,40 @@
 
 users = User.create([
   {
+    name: 'allison l',
+    email: 'allison@me.com'
+  },
+  {
     name: 'themattharris',
-    email: 'themattharris@twitter.com'
+    email: 'themattharris@myemail.net'
   },
   {
     name: 'cindyli',
-    email: 'cindyli@yahoo-inc.com'
+    email: 'cindyli@ymyemail.net'
+  },
+  {
+    name: 'pinky parker',
+    email: 'parker@myemail.net'
+  },
+  {
+    name: 'markp',
+    email: 'markymark@myeail.net'
+  },
+  {
+    name: 'madninja',
+    email: 'madninja@myemail.net'
+  },
+  {
+    name: 'jouhan',
+    email: 'jouhan@myemail.net'
+  },
+  {
+    name: 'greentea',
+    email: 'greentea@myemail.net'
+  },
+  {
+    name: 'coffeeandtv',
+    email: 'coffeeandtv@myemail.net'
   }
 ])
 
@@ -52,5 +80,48 @@ challenges = Challenge.create([
     target_date: '2013-12-07',
     creator: users.last,
     team: teams.first
+  }
+])
+
+donations = Donation.create([
+  {
+    donor: users[1],
+    referrer: users.first,
+    value: 15.00
+  },
+  {
+    donor: users[2],
+    referrer: users.first,
+    value: 15.00
+  },
+  {
+    donor: users[3],
+    referrer: users.first,
+    value: 25.00
+  },
+  {
+    donor: users[4],
+    referrer: users.first,
+    value: 50.00
+  },
+    {
+    donor: users[5],
+    referrer: users.first,
+    value: 5.00
+  },
+  {
+    donor: users[6],
+    referrer: users.first,
+    value: 15.00
+  },
+  {
+    donor: users[7],
+    referrer: users.first,
+    value: 50.00
+  },
+  {
+    donor: users[8],
+    referrer: users.first,
+    value: 25.00
   }
 ])
