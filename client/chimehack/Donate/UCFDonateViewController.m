@@ -9,6 +9,7 @@
 #import "UCFDonateViewController.h"
 
 @interface UCFDonateViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *headerLabel;
 @property (strong, nonatomic) IBOutlet UILabel *nameLabel;
 @property (strong, nonatomic) IBOutlet UILabel *achievedLabel;
 @property (strong, nonatomic) IBOutlet UILabel *valuationLabel;
@@ -24,7 +25,7 @@
     if (!self) return nil;
     
     self.title = NSLocalizedString(@"Donate", nil);
-    self.tabBarItem = [UITabBarItem ucf_tabBarItemWithBaseName:@"tabbar-unicef" title:NSLocalizedString(@"Donate", nil)];
+    self.tabBarItem = [UITabBarItem ucf_tabBarItemWithBaseName:@"tabbar-unicef" title:self.title];
 
     return self;
 }
@@ -32,6 +33,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    _headerLabel.attributedText = [NSAttributedString ucf_trickOrTreatString];
     
     UIImage *thumbImage = [UIImage imageNamed:@"btn-drag-circle"];
     [self.valueSlider setThumbImage:thumbImage forState:UIControlStateNormal];

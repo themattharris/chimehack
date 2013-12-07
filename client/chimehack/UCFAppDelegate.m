@@ -81,6 +81,7 @@
     UCFMainTabController *tabController = [[UCFMainTabController alloc] init];
     NSArray *controllers = @[tabController];
     [_rootNavigationController setViewControllers:controllers animated:YES];
+    [_rootNavigationController setNavigationBarHidden:NO animated:YES];
     
     [controller dismissViewControllerAnimated:YES completion:NULL];
 }
