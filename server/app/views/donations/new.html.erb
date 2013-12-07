@@ -1,11 +1,17 @@
-<div class='header centered'>
-  <%= image_tag "unicef-logo-small.jpg" %>
+<div class="row centered">
+  <%= image_tag "social-btns.jpg" -%>
+  <div class="col-md-12 circle pad-photo">
+    <span class="image-wrap " style="position:relative; display:inline-block; background:url(/assets/sadkid.jpg) no-repeat center center; width: 150px; height: 150px;"><img src="/assets/sadkid.jpg" style="opacity: 0;"></span>
+  </div>
+  <h5>Allison's raised <br /><strong>$30</strong> of the <strong>$500</strong> goal</h5>
 </div>
 
-<h2>Complete your donation</h2>
-
-
+<h2>Enter an amount *</h2>
 <form role="form" style="max-width: 500px">
+  <input type="text" id="amount" name="amount" class="form-control" placeholder="amount">
+  <div class='centered'><h6><em>All donations are tax deductable</em></h6></div>
+  <br />
+
   <fieldset>
     <div id="legend">
       <legend class="">Payment <%= image_tag "credit-card-icons.jpg", :style => 'margin: 0 0 5px 20px' -%></legend>
