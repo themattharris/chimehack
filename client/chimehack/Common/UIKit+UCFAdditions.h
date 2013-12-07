@@ -33,6 +33,7 @@
 @interface UIViewController (UCFAdditions)
 
 - (CGRect)ucf_frameForView:(UIView *)view givenKeyboardFrame:(CGRect)keyboardFrame;
+- (void)ucf_presentErrorMessage:(NSString *)message;
 
 @end
 

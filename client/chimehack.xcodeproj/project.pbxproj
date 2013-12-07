@@ -25,6 +25,9 @@
 		B86800EC18539E5B003E4610 /* UCFSendEmailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B86800EA18539E5A003E4610 /* UCFSendEmailViewController.m */; };
 		B86800ED18539E5B003E4610 /* UCFSendEmailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B86800EB18539E5A003E4610 /* UCFSendEmailViewController.xib */; };
 		B86800F018539F64003E4610 /* UCFUnderlinedTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = B86800EF18539F64003E4610 /* UCFUnderlinedTextField.m */; };
+		B86800F41853AE63003E4610 /* UCFService.m in Sources */ = {isa = PBXBuildFile; fileRef = B86800F31853AE63003E4610 /* UCFService.m */; };
+		B86800F81853BA54003E4610 /* UCFCreditCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B86800F61853BA54003E4610 /* UCFCreditCardViewController.m */; };
+		B86800F91853BA54003E4610 /* UCFCreditCardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B86800F71853BA54003E4610 /* UCFCreditCardViewController.xib */; };
 		B876F5B71852C2B600ED630A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B876F5B61852C2B600ED630A /* Foundation.framework */; };
 		B876F5B91852C2B600ED630A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B876F5B81852C2B600ED630A /* CoreGraphics.framework */; };
 		B876F5BB1852C2B600ED630A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B876F5BA1852C2B600ED630A /* UIKit.framework */; };
@@ -79,6 +82,11 @@
 		B86800EB18539E5A003E4610 /* UCFSendEmailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UCFSendEmailViewController.xib; sourceTree = "<group>"; };
 		B86800EE18539F64003E4610 /* UCFUnderlinedTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UCFUnderlinedTextField.h; sourceTree = "<group>"; };
 		B86800EF18539F64003E4610 /* UCFUnderlinedTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UCFUnderlinedTextField.m; sourceTree = "<group>"; };
+		B86800F21853AE63003E4610 /* UCFService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UCFService.h; sourceTree = "<group>"; };
+		B86800F31853AE63003E4610 /* UCFService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UCFService.m; sourceTree = "<group>"; };
+		B86800F51853BA54003E4610 /* UCFCreditCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UCFCreditCardViewController.h; sourceTree = "<group>"; };
+		B86800F61853BA54003E4610 /* UCFCreditCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UCFCreditCardViewController.m; sourceTree = "<group>"; };
+		B86800F71853BA54003E4610 /* UCFCreditCardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UCFCreditCardViewController.xib; sourceTree = "<group>"; };
 		B876F5B31852C2B600ED630A /* chimehack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chimehack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B876F5B61852C2B600ED630A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B876F5B81852C2B600ED630A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -160,6 +168,9 @@
 				B86800E918539E5A003E4610 /* UCFSendEmailViewController.h */,
 				B86800EA18539E5A003E4610 /* UCFSendEmailViewController.m */,
 				B86800EB18539E5A003E4610 /* UCFSendEmailViewController.xib */,
+				B86800F51853BA54003E4610 /* UCFCreditCardViewController.h */,
+				B86800F61853BA54003E4610 /* UCFCreditCardViewController.m */,
+				B86800F71853BA54003E4610 /* UCFCreditCardViewController.xib */,
 			);
 			path = Donate;
 			sourceTree = "<group>";
@@ -183,6 +194,15 @@
 			);
 			path = Settings;
 			sourceTree = "<group>";
+		};
+		B86800F11853AE51003E4610 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				B86800F21853AE63003E4610 /* UCFService.h */,
+				B86800F31853AE63003E4610 /* UCFService.m */,
+			);
+			path = Service;
+			sourceTree = SOURCE_ROOT;
 		};
 		B876F5AA1852C2B600ED630A = {
 			isa = PBXGroup;
@@ -219,6 +239,7 @@
 		B876F5BC1852C2B600ED630A /* chimehack */ = {
 			isa = PBXGroup;
 			children = (
+				B86800F11853AE51003E4610 /* Service */,
 				B86800E01853986C003E4610 /* Settings */,
 				B86800DA18539754003E4610 /* Achievements */,
 				B85F53EE1852ED3F0017CB23 /* Donate */,
@@ -345,6 +366,7 @@
 				B86800E518539878003E4610 /* UCFSettingsViewController.xib in Resources */,
 				B85F53F31852EDAC0017CB23 /* UCFDonateViewController.xib in Resources */,
 				B85F53F51852EF2F0017CB23 /* UCFDonateViewController.xcassets in Resources */,
+				B86800F91853BA54003E4610 /* UCFCreditCardViewController.xib in Resources */,
 				B876F5CF1852C2B600ED630A /* Images.xcassets in Resources */,
 				B86800DF1853976A003E4610 /* UCFAchievementsViewController.xib in Resources */,
 				B876F5C11852C2B600ED630A /* InfoPlist.strings in Resources */,
@@ -403,6 +425,7 @@
 			files = (
 				B85F53F21852EDAC0017CB23 /* UCFDonateViewController.m in Sources */,
 				B85F53E21852D5C90017CB23 /* UCFSettings.m in Sources */,
+				B86800F41853AE63003E4610 /* UCFService.m in Sources */,
 				B86800EC18539E5B003E4610 /* UCFSendEmailViewController.m in Sources */,
 				B86800DE1853976A003E4610 /* UCFAchievementsViewController.m in Sources */,
 				B876F5C31852C2B600ED630A /* main.m in Sources */,
@@ -412,6 +435,7 @@
 				B85F53EC1852ECB10017CB23 /* UCFSignupViewController.m in Sources */,
 				B86800E418539878003E4610 /* UCFSettingsViewController.m in Sources */,
 				B85F53E51852D7BB0017CB23 /* UIKit+UCFAdditions.m in Sources */,
+				B86800F81853BA54003E4610 /* UCFCreditCardViewController.m in Sources */,
 				B85F53D51852C4370017CB23 /* UCFNavigationController.m in Sources */,
 				B85F53F91852F6080017CB23 /* UCFMainTabController.m in Sources */,
 			);

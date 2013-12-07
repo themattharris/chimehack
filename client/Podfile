@@ -5,3 +5,5 @@ workspace 'chimehack.xcworkspace'
 # Opensource Approved
 pod 'MNColorKit', :head
 pod 'AutoLayoutShorthand', :podspec => './PodSpecs/AutoLayoutShorthand.podspec'
+pod 'AFNetworking'
+pod 'UIAlertView+Blocks'

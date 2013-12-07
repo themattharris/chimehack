@@ -9,6 +9,7 @@
 #import "UIKit+UCFAdditions.h"
 
 #import <MNColorKit/MNColorKit.h>
+#import <UIAlertView+Blocks/UIAlertView+Blocks.h>
 
 @implementation UIView (UCFAdditions)
 
@@ -77,6 +78,12 @@
     viewRect.size.height = MAX(0, CGRectGetMinY(keyboardFrame) - CGRectGetMinY(viewRect));
     return viewRect;
 }
+
+- (void)ucf_presentErrorMessage:(NSString *)message
+{
+    [UIAlertView showWithTitle:NSLocalizedString(@"Error", nil) message:message cancelButtonTitle:@"OK" otherButtonTitles:nil tapBlock:NULL];
+}
+
 
 @end
 
