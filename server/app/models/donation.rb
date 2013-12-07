@@ -1,5 +1,6 @@
 class Donation < ActiveRecord::Base
   before_save :default_values
+  after_save :update_challenge_current_funds
 
   belongs_to :challenge
   belongs_to :donor, :class_name => 'User'
@@ -15,7 +16,8 @@ class Donation < ActiveRecord::Base
       :only => [:currency, :value],
       :include => {
         donor: { only: [:id, :name] },
-        referrer: { only: [:id, :name] }
+        referrer: { only: [:id, :name] },
+        challenge: { only: [:name, :target, :current] }
     }}.merge(options))
 
     result = result.reject { |a,b| b.nil? }
@@ -25,5 +27,10 @@ class Donation < ActiveRecord::Base
   private
   def default_values
     (self.currency ||= 'USD').upcase
+    self.challenge_id = 1
+  end
+
+  def update_challenge_current_funds
+    Challenge.update_raised_funds(self.challenge_id, self.value)
   end
 end
