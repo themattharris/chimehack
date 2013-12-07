@@ -24,15 +24,15 @@ accessible interwebs version: http://chimehack.tokofu.net
 
 
 
-API
-===
+h1. API
+
 Authentication: not yet (be good to me)
 Formats supported: json
 Caveats: model validations are being added - so it will just let anything happen now
 
-Endpoints
----------
-Create User
+h2. Endpoints
+
+h3. Create User
 method: POST
 path: /api/user.json
 params:
@@ -44,8 +44,17 @@ response:
 {
   "id": 6,
   "name": "bob",
-  "email": null,
-  "phone": null,
-  "created_at": "2013-12-07T18:29:25.509Z",
-  "updated_at": "2013-12-07T18:29:25.509Z"
+}
+
+
+h3. Show User
+method: GET
+path: /api/user/:id.json
+params:
+- id: integer
+
+response:
+{
+  "id": 6,
+  "name": "bob",
 }

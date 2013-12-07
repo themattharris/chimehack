@@ -25,6 +25,7 @@ Server::Application.routes.draw do
 
   namespace :api do
     post 'user.:format' => 'users#create'
+    get 'user/:id.:format' => 'users#show'
   end
   # Example resource route with options:
   #   resources :products do

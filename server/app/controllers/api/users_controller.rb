@@ -9,8 +9,15 @@ class Api::UsersController < ApiController
       end
     else
       respond_to do |format|
-        format.json { render :json => @user.errors.full_messages, :status => 400 }
+        format.json { render :json => { :errors => @user.errors.full_messages }, :status => 400 }
       end
+    end
+  end
+
+  def show
+    @user = User.find(params[:id])
+    respond_to do |format|
+      format.json { render :json => @user }
     end
   end
 
