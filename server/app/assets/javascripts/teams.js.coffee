@@ -29,13 +29,10 @@ $().ready ->
   if ($('.slider').length == 0)
     return false
   $('.slider').slider
-    orientation:'vertical'
     min: MIN
     max: MAX
     value: INITIAL
     step: INITIAL
-    reversed: true
-    selection: 'after'
   $('.slider').on 'slide', (ev) ->
     updateDonation(ev.value)
   updateDonation(INITIAL)
