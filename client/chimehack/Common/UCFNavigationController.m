@@ -7,6 +7,7 @@
 //
 
 #import "UCFNavigationController.h"
+#import "UCFSignupViewController.h"
 
 @interface _UCFEmptyViewController : UIViewController
 
@@ -28,14 +29,13 @@
     imageView.frame = self.view.bounds;
     [self.view addSubview:imageView];
     
-    self.view.backgroundColor = RGBX(0xEB7530);
+    self.view.backgroundColor = [UIColor ucf_orange];
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle
 {
     return UIStatusBarStyleLightContent;
 }
-
 
 @end
 
@@ -50,8 +50,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    self.navigationBarHidden = YES;
+
+    self.navigationBar.barTintColor = [UIColor ucf_orange];
+    self.navigationBar.titleTextAttributes = @{ NSForegroundColorAttributeName : [UIColor whiteColor],
+                                                NSFontAttributeName : [UIFont ucf_fontWithSize:22]};
 }
 
 - (UIViewController*)_topVisibleController
