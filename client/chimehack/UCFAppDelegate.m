@@ -84,7 +84,7 @@
     
     BOOL animated = controller == nil;
     [_rootNavigationController setViewControllers:controllers animated:animated];
-    [_rootNavigationController setNavigationBarHidden:NO animated:animated];
+    [_rootNavigationController setNavigationBarHidden:NO animated:NO];
     
     [controller dismissViewControllerAnimated:YES completion:NULL];
 }

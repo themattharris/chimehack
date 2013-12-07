@@ -24,20 +24,17 @@ table {
 
 .container {
   max-width: 600px;
-  padding: 0 3em;
 }
 
 .header {
   background-color: rgb(239,116,34);
   padding: 0.33em 0 0.66em 0;
   margin-bottom: 1em;
-  margin-left: -10em;
-  margin-right: -10em;
 }
 
 .footer {
-  color: #999;
-  font-size: 1em;
+  color: #666;
+  font-size: 0.75em;
   font-weight: 200;
   margin-top: 1em;
   text-align: center;
@@ -55,7 +52,7 @@ h4 {
   color: rgb(251, 103, 0);
   font-size: 2em;
   font-weight: 200;
-  margin: 0 2em 1em;
+  margin: 0 0 1em;
   text-transform: uppercase;
 }
 
@@ -96,12 +93,11 @@ h5 strong {
 }
 
 .slider-wrap {
-  margin: 0 0 1em;
 }
 
 .slider-wrap strong {
   color: rgb(251, 103, 0);
-  font-size: 1.75em;
+  font-size: 1.5em;
   font-weight: 100;
   margin: 0 0.5em;
 }
