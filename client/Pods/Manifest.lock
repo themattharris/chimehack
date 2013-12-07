@@ -1,10 +1,17 @@
 PODS:
+  - AutoLayoutShorthand (0.0.1)
   - MNColorKit (HEAD based on 1.0.2)
 
 DEPENDENCIES:
+  - AutoLayoutShorthand (from `./PodSpecs/AutoLayoutShorthand.podspec`)
   - MNColorKit (HEAD)
 
+EXTERNAL SOURCES:
+  AutoLayoutShorthand:
+    :podspec: ./PodSpecs/AutoLayoutShorthand.podspec
+
 SPEC CHECKSUMS:
+  AutoLayoutShorthand: 01443ef553dc9eb7383c07d55a4e2c60d549c6f7
   MNColorKit: 61380ff9c94430be602684a3dfb18c18dec7bb78
 
 COCOAPODS: 0.28.0

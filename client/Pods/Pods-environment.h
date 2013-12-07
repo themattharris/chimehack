@@ -6,6 +6,12 @@
 // project.
 
 
+// AutoLayoutShorthand
+#define COCOAPODS_POD_AVAILABLE_AutoLayoutShorthand
+#define COCOAPODS_VERSION_MAJOR_AutoLayoutShorthand 0
+#define COCOAPODS_VERSION_MINOR_AutoLayoutShorthand 0
+#define COCOAPODS_VERSION_PATCH_AutoLayoutShorthand 1
+
 // MNColorKit
 #define COCOAPODS_POD_AVAILABLE_MNColorKit
 #define COCOAPODS_VERSION_MAJOR_MNColorKit 1

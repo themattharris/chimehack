@@ -9,6 +9,9 @@
 #import "UCFAppDelegate.h"
 
 #import "UCFNavigationController.h"
+#import "UCFSignupViewController.h"
+
+#import "UCFSettings.h"
 
 @implementation UCFAppDelegate
 {
@@ -24,6 +27,17 @@
     
     [self.window makeKeyAndVisible];
     
+    if (![[UCFSettings sharedInstace] signedInUserId]) {
+        double delayInSeconds = 1.0;
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            UCFSignupViewController *controller = [[UCFSignupViewController alloc] init];
+            UCFNavigationController *navController = [[UCFNavigationController alloc] initWithRootViewController:controller];
+            [_rootNavigationController presentViewController:navController animated:YES completion:NULL];
+        });
+    }
+    
+
     return YES;
 }
 							

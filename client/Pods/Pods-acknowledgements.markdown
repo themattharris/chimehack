@@ -1,6 +1,12 @@
 # Acknowledgements
 This application makes use of the following third party libraries:
 
+## AutoLayoutShorthand
+
+Copyright (c) 2013 Jonathan 'Wolf' Rentzsch: http://rentzsch.com. 
+Some rights reserved: http://opensource.org/licenses/mit.
+
+
 ## MNColorKit
 
 Copyright (c) 2013 Marc Nijdam (marc@imadjine.com)
