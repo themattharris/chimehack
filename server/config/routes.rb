@@ -18,6 +18,7 @@ Server::Application.routes.draw do
   scope '/admin' do
     resources :challenges
     resources :donations
+    resources :incentives
     resources :users
     resources :teams
   end

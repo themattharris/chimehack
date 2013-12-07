@@ -41,8 +41,10 @@ class UsersController < ApplicationController
   end
 
   def find_contextual_user
-    @user = if (id = params[:id])
+    @user = if (id = params[:id]).present?
       User.find(id)
+    elsif params[:user]
+      User.new(user_params)
     else
       User.new
     end
