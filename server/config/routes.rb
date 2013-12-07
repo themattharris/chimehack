@@ -23,6 +23,9 @@ Server::Application.routes.draw do
     resources :teams
   end
 
+  namespace :api do
+    post 'user.:format' => 'users#create'
+  end
   # Example resource route with options:
   #   resources :products do
   #     member do
