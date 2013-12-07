@@ -27,13 +27,13 @@ ActiveRecord::Schema.define(version: 20131207074336) do
   end
 
   create_table "donations", force: true do |t|
+    t.integer  "donor_id"
+    t.integer  "cause_id"
     t.string   "currency",              limit: 5
     t.decimal  "value",                           precision: 8, scale: 2
+    t.integer  "referrer_id"
     t.string   "transaction_id"
     t.integer  "transaction_source_id"
-    t.integer  "donor_id"
-    t.integer  "referrer_id"
-    t.integer  "challenge_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -45,16 +45,18 @@ ActiveRecord::Schema.define(version: 20131207074336) do
     t.datetime "updated_at"
   end
 
+  create_table "team_members", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "team_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "teams", force: true do |t|
     t.string   "name"
     t.integer  "creator_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "teams_users", force: true do |t|
-    t.integer "user_id"
-    t.integer "team_id"
   end
 
   create_table "users", force: true do |t|
