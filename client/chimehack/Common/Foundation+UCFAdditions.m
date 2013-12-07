@@ -8,6 +8,15 @@
 
 #import "Foundation+UCFAdditions.h"
 
+@implementation NSString (UCFAdditions)
+
+- (BOOL)ucf_isValidEmailAddress
+{
+    return [self rangeOfString:@"^.+@.+\\..{2,}$" options:NSRegularExpressionSearch].location != NSNotFound;
+}
+
+@end
+
 @implementation NSAttributedString (UCFAdditions)
 
 + (NSAttributedString *)ucf_trickOrTreatString

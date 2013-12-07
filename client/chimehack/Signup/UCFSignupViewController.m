@@ -9,6 +9,9 @@
 #import "UCFSignupViewController.h"
 
 #import "UCFUnderlinedTextField.h"
+#import "UCFService.h"
+
+#import <UIAlertView+Blocks/UIAlertView+Blocks.h>
 
 @interface UCFSignupViewController () <UITextFieldDelegate>
 
@@ -29,6 +32,7 @@
     self.title = NSLocalizedString(@"Create Account", nil);
     self.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem ucf_barButtonItemWithTitle:NSLocalizedString(@"Join", nil) target:self action:@selector(_didTapJoinButton:)];
+    self.navigationItem.rightBarButtonItem.enabled = NO;
 
     return self;
 }
@@ -88,6 +92,7 @@
                                                                }];
     
     _emailTextField = [[UCFUnderlinedTextField alloc] initWithFrame:CGRectZero];
+    _emailTextField.textField.autocapitalizationType = UITextAutocapitalizationTypeNone;
     [_emailTextField setPlaceholderText:NSLocalizedString(@"Parent's Email", nil)];
     _emailTextField.textField.delegate = self;
 
@@ -110,6 +115,40 @@
     return UIStatusBarStyleLightContent;
 }
 
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    if (textField == _nameTextField.textField) {
+        textField.keyboardType = UIKeyboardTypeDefault;
+    } else if (textField == _emailTextField.textField) {
+        textField.keyboardType = UIKeyboardTypeEmailAddress;
+    }
+    
+    [textField reloadInputViews];
+}
+
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    BOOL isComplete = NO;
+
+    NSString *nameText = _nameTextField.textField.text;
+    NSString *emailText = _emailTextField.textField.text;
+    
+    if (textField == _nameTextField.textField) {
+        nameText = [nameText stringByReplacingCharactersInRange:range withString:string];
+    }
+    
+    if (textField == _emailTextField.textField) {
+        emailText = [emailText stringByReplacingCharactersInRange:range withString:string];
+    }
+    
+    isComplete = [emailText ucf_isValidEmailAddress] && nameText.length > 0;
+    
+    self.navigationItem.rightBarButtonItem.enabled = isComplete;
+    
+    return YES;
+}
+
 
 - (void)_didTapCameraButton:(id)sender
 {
@@ -118,7 +157,13 @@
 
 - (void)_didTapJoinButton:(id)sender
 {
-    [_delegate signupViewControllerDidComplete:self];
+    [[UCFService sharedInstance] signupWithName:_nameTextField.textField.text email:_emailTextField.textField.text completion:^(id result, NSError *error) {
+        if (error) {
+            [self ucf_presentErrorMessage:NSLocalizedString(@"Failed to sign up. Please try again..", nil)];
+        } else {
+            [_delegate signupViewControllerDidComplete:self];
+        }
+    }];
 }
 
 - (void)willShowKeyboard:(NSNotification *)notification
@@ -126,7 +171,7 @@
     CGFloat duration = [[[notification userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey] floatValue];
     
     [UIView animateWithDuration:duration animations:^{
-        _containerView.transform = CGAffineTransformMakeTranslation(0, -100);
+        _containerView.transform = CGAffineTransformMakeTranslation(0, -150);
     }];
 }
 

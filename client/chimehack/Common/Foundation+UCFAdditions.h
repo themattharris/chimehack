@@ -8,6 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+@interface NSString (UCFAdditions)
+
+- (BOOL)ucf_isValidEmailAddress;
+
+@end
+
 @interface NSAttributedString (UCFAdditions)
 
 + (NSAttributedString *)ucf_trickOrTreatString;
