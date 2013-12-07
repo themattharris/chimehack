@@ -1,4 +1,4 @@
-# chimehack 
+# chimehack
 project for the unicef trick or treat project.
 
 ## project layout
@@ -14,7 +14,7 @@ project for the unicef trick or treat project.
   * gem install bundler
   * bundle
 * install mysql 5.5+ (http://dev.mysql.com/downloads/mysql/5.5.html)
-  * make sure username is **root**  
+  * make sure username is **root**
   * make sure password is **blank**
 * create the databases
   * rake db:create
@@ -68,7 +68,7 @@ project for the unicef trick or treat project.
   "name": "bob",
 }`
 
-#### Donate
+#### Donate (in development)
 * **method**: POST
 * **path**: /api/donate.json
 * **params**
@@ -82,7 +82,7 @@ project for the unicef trick or treat project.
   "name": "bob",
 }`
 
-#### Donations by donor
+#### Donations by donor (in development)
 * **method**: GET
 * **path**: /api/donations/for_donor.json
 * **params**:
@@ -96,7 +96,7 @@ project for the unicef trick or treat project.
 }`
 
 
-#### Donations by referrer
+#### Donations by referrer (in development)
 * **method**: GET
 * **path**: /api/donations/for_referrer.json
 * **params**:
