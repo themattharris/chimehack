@@ -42,13 +42,12 @@ project for the unicef trick or treat project.
 ### Endpoints
 
 #### Create User
-
 * **method**: POST
 * **path**: /api/user.json
 * **params**
-  * `name`: string
-  * `email`: string
-  * `phone`: string
+  * `name`: string : required
+  * `email`: string : optional : required if phone not specified
+  * `phone`: string : optional : required if email not specified
 * **response**:
 `{
   "id": 6,
@@ -58,9 +57,52 @@ project for the unicef trick or treat project.
 
 #### Show User
 * **method**: GET
-* **path**: /api/user/:id.json
+* **path**: /api/user.json
 * **params**:
-  * `id`: integer
+  * `id`: integer : required
+* **example**
+  * `/api/user.json?id=2`
+* **response**:
+`{
+  "id": 6,
+  "name": "bob",
+}`
+
+#### Donate
+* **method**: POST
+* **path**: /api/donate.json
+* **params**
+  * `donor_id`: integer : required : the id of the person gifting money
+  * `referrer_id`: integer : required :  the id of the person collecting money
+  * `currency`: string : optional : the currency of the money gift (defaults to USD)
+  * ....
+* **response**:
+`{
+  "id": 6,
+  "name": "bob",
+}`
+
+#### Donations by donor
+* **method**: GET
+* **path**: /api/donations/for_donor.json
+* **params**:
+  * `donor_id`: integer : required
+* **example**
+  * `/api/donations/for_donor.json?id=2`
+* **response**:
+`{
+  "id": 6,
+  "name": "bob",
+}`
+
+
+#### Donations by referrer
+* **method**: GET
+* **path**: /api/donations/for_referrer.json
+* **params**:
+  * `referrer_id`: integer : required
+* **example**
+  * `/api/donations/for_referrer.json?id=2`
 * **response**:
 `{
   "id": 6,
