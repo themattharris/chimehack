@@ -68,7 +68,7 @@ project for the unicef trick or treat project.
   "name": "bob"  
 }`
 
-#### Donate (in development)
+#### Donate
 * **method**: POST
 * **path**: /api/donate.json
 * **params**
