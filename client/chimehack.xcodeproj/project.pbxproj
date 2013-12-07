@@ -92,7 +92,7 @@
 		B86800FD1853D4B6003E4610 /* UCFAchievementButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UCFAchievementButton.h; sourceTree = "<group>"; };
 		B86800FE1853D4B6003E4610 /* UCFAchievementButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UCFAchievementButton.m; sourceTree = "<group>"; };
 		B86801021853D89C003E4610 /* UCFAchievementsController.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = UCFAchievementsController.xcassets; sourceTree = "<group>"; };
-		B876F5B31852C2B600ED630A /* chimehack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chimehack.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B876F5B31852C2B600ED630A /* TOT4UNICEF.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TOT4UNICEF.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B876F5B61852C2B600ED630A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B876F5B81852C2B600ED630A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		B876F5BA1852C2B600ED630A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -226,7 +226,7 @@
 		B876F5B41852C2B600ED630A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B876F5B31852C2B600ED630A /* chimehack.app */,
+				B876F5B31852C2B600ED630A /* TOT4UNICEF.app */,
 				B876F5D41852C2B600ED630A /* chimehackTests.xctest */,
 			);
 			name = Products;
@@ -311,7 +311,7 @@
 			);
 			name = chimehack;
 			productName = chimehack;
-			productReference = B876F5B31852C2B600ED630A /* chimehack.app */;
+			productReference = B876F5B31852C2B600ED630A /* TOT4UNICEF.app */;
 			productType = "com.apple.product-type.application";
 		};
 		B876F5D31852C2B600ED630A /* chimehackTests */ = {
@@ -526,6 +526,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = TOT4UNICEF;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -558,6 +559,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = TOT4UNICEF;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -574,7 +576,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "chimehack/chimehack-Prefix.pch";
 				INFOPLIST_FILE = "chimehack/chimehack-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = TOT4UNICEF;
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
@@ -591,7 +593,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "chimehack/chimehack-Prefix.pch";
 				INFOPLIST_FILE = "chimehack/chimehack-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = TOT4UNICEF;
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
