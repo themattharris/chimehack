@@ -29,6 +29,7 @@ project for the unicef trick or treat project.
 * web and iphone flows (Phase 1): https://drive.google.com/#folders/0B7yysWiQbKCkUUNqc3QxYWUyN2c
 * online production-ish version: http://chimehack.tokofu.net
   * _it's running in dev mode so be aware that it will show more debug information_
+* if you need to refresh the local database use `rake db:reseed`
 
 ## API
 
@@ -49,10 +50,10 @@ project for the unicef trick or treat project.
   * `email`: string : optional : required if phone not specified
   * `phone`: string : optional : required if email not specified
 * **response**:
-`{
+```{
   "id": 6,
   "name": "bob",
-}`
+}```
 
 
 #### Show User
@@ -63,10 +64,10 @@ project for the unicef trick or treat project.
 * **example**
   * `/api/user.json?id=2`
 * **response**:
-`{
+```{
   "id": 6,
   "name": "bob"
-}`
+}```
 
 #### Donate
 * **method**: POST
@@ -76,7 +77,7 @@ project for the unicef trick or treat project.
   * `referrer_id`: integer : required :  the id of the person collecting money
   * `value`: double : required : the value to donate (>=1 or <=100000000)
 * **response**:
-`{
+```{
   "id": 6,
   "currency": "USD",
   "value": "10.0",
@@ -88,7 +89,7 @@ project for the unicef trick or treat project.
     "id": 2,
     "name": "cindyli"
   }
-}`
+}```
 
 #### Donations by donor
 * **method**: GET
@@ -98,7 +99,7 @@ project for the unicef trick or treat project.
 * **example**
   * `/api/donations/for_donor.json?id=2`
 * **response**:
-`{
+```{
   "total_value": 15.0,
   "count": 1,
   "donations": [
@@ -120,7 +121,7 @@ project for the unicef trick or treat project.
       }
     }
   ]
-}`
+}```
 
 
 #### Donations by referrer
@@ -131,7 +132,7 @@ project for the unicef trick or treat project.
 * **example**
   * `/api/donations/for_referrer.json?id=1`
 * **response**:
-`{
+```{
   "total_value": 15.0,
   "count": 2,
   "donations": [
@@ -170,4 +171,4 @@ project for the unicef trick or treat project.
       }
     }
   ]
-}`
+}```

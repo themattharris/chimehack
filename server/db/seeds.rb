@@ -133,3 +133,38 @@ donations = Donation.create([
     value: 25.00
   }
 ])
+
+incentives = Incentive.create([
+  {
+    value: 6,
+    description: "A soccer ball for children in refugee camps."
+  },
+  {
+    value: 20,
+    description: "Bed nets to protect families from deadly malaria-carrying mosquitoes."
+  },
+  {
+    value: 35,
+    description: "Vaccines to protect 50 kids from killer diseases."
+  },
+  {
+    value: 70,
+    description: "High-protein peanut paste to protect kids from malnutrition."
+  },
+  {
+    value: 100,
+    description: "A bicycle to deliver medicines."
+  },
+  {
+    value: 240,
+    description: "A School-in-a-Box kit that lets kids learn anywhere."
+  },
+  {
+    value: 500,
+    description: "A pump that provides clean water to a village or school."
+  },
+  {
+    value: 2800,
+    description: "A motorbike ambulance that travels easily."
+  }
+])
