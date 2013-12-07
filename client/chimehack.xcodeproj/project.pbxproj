@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		7B2C67AF403C4CFDB8026FF8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F03C1FB80464482BB1F990F9 /* libPods.a */; };
 		B85F53D51852C4370017CB23 /* UCFNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B85F53D41852C4370017CB23 /* UCFNavigationController.m */; };
-		B85F53DF1852D2C20017CB23 /* UCFSignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B85F53DE1852D2C20017CB23 /* UCFSignupViewController.m */; };
 		B85F53E21852D5C90017CB23 /* UCFSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = B85F53E11852D5C90017CB23 /* UCFSettings.m */; };
 		B85F53E51852D7BB0017CB23 /* UIKit+UCFAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B85F53E41852D7BB0017CB23 /* UIKit+UCFAdditions.m */; };
-		B85F53E71852E2090017CB23 /* UCFSignupViewController.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B85F53E61852E2090017CB23 /* UCFSignupViewController.xcassets */; };
+		B85F53EC1852ECB10017CB23 /* UCFSignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B85F53EA1852ECB10017CB23 /* UCFSignupViewController.m */; };
+		B85F53ED1852ECB10017CB23 /* UCFSignupViewController.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B85F53EB1852ECB10017CB23 /* UCFSignupViewController.xcassets */; };
 		B876F5B71852C2B600ED630A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B876F5B61852C2B600ED630A /* Foundation.framework */; };
 		B876F5B91852C2B600ED630A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B876F5B81852C2B600ED630A /* CoreGraphics.framework */; };
 		B876F5BB1852C2B600ED630A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B876F5BA1852C2B600ED630A /* UIKit.framework */; };
@@ -41,13 +41,13 @@
 		9D9B046B2AE347D3BA08D21D /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		B85F53D31852C4370017CB23 /* UCFNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UCFNavigationController.h; sourceTree = "<group>"; };
 		B85F53D41852C4370017CB23 /* UCFNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UCFNavigationController.m; sourceTree = "<group>"; };
-		B85F53DD1852D2C20017CB23 /* UCFSignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UCFSignupViewController.h; sourceTree = "<group>"; };
-		B85F53DE1852D2C20017CB23 /* UCFSignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UCFSignupViewController.m; sourceTree = "<group>"; };
 		B85F53E01852D5C90017CB23 /* UCFSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UCFSettings.h; sourceTree = "<group>"; };
 		B85F53E11852D5C90017CB23 /* UCFSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UCFSettings.m; sourceTree = "<group>"; };
 		B85F53E31852D7BB0017CB23 /* UIKit+UCFAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIKit+UCFAdditions.h"; sourceTree = "<group>"; };
 		B85F53E41852D7BB0017CB23 /* UIKit+UCFAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIKit+UCFAdditions.m"; sourceTree = "<group>"; };
-		B85F53E61852E2090017CB23 /* UCFSignupViewController.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = UCFSignupViewController.xcassets; sourceTree = "<group>"; };
+		B85F53E91852ECB10017CB23 /* UCFSignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UCFSignupViewController.h; sourceTree = "<group>"; };
+		B85F53EA1852ECB10017CB23 /* UCFSignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UCFSignupViewController.m; sourceTree = "<group>"; };
+		B85F53EB1852ECB10017CB23 /* UCFSignupViewController.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = UCFSignupViewController.xcassets; sourceTree = "<group>"; };
 		B876F5B31852C2B600ED630A /* chimehack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chimehack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B876F5B61852C2B600ED630A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B876F5B81852C2B600ED630A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -105,12 +105,12 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
-		B85F53DC1852D2990017CB23 /* Signup */ = {
+		B85F53E81852ECB10017CB23 /* Signup */ = {
 			isa = PBXGroup;
 			children = (
-				B85F53DD1852D2C20017CB23 /* UCFSignupViewController.h */,
-				B85F53DE1852D2C20017CB23 /* UCFSignupViewController.m */,
-				B85F53E61852E2090017CB23 /* UCFSignupViewController.xcassets */,
+				B85F53E91852ECB10017CB23 /* UCFSignupViewController.h */,
+				B85F53EA1852ECB10017CB23 /* UCFSignupViewController.m */,
+				B85F53EB1852ECB10017CB23 /* UCFSignupViewController.xcassets */,
 			);
 			path = Signup;
 			sourceTree = "<group>";
@@ -150,7 +150,7 @@
 		B876F5BC1852C2B600ED630A /* chimehack */ = {
 			isa = PBXGroup;
 			children = (
-				B85F53DC1852D2990017CB23 /* Signup */,
+				B85F53E81852ECB10017CB23 /* Signup */,
 				B85F53D21852C4150017CB23 /* Common */,
 				B876F5C51852C2B600ED630A /* UCFAppDelegate.h */,
 				B876F5C61852C2B600ED630A /* UCFAppDelegate.m */,
@@ -270,7 +270,7 @@
 			files = (
 				B876F5CF1852C2B600ED630A /* Images.xcassets in Resources */,
 				B876F5C11852C2B600ED630A /* InfoPlist.strings in Resources */,
-				B85F53E71852E2090017CB23 /* UCFSignupViewController.xcassets in Resources */,
+				B85F53ED1852ECB10017CB23 /* UCFSignupViewController.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,9 +325,9 @@
 				B85F53E21852D5C90017CB23 /* UCFSettings.m in Sources */,
 				B876F5C31852C2B600ED630A /* main.m in Sources */,
 				B876F5C71852C2B600ED630A /* UCFAppDelegate.m in Sources */,
+				B85F53EC1852ECB10017CB23 /* UCFSignupViewController.m in Sources */,
 				B85F53E51852D7BB0017CB23 /* UIKit+UCFAdditions.m in Sources */,
 				B85F53D51852C4370017CB23 /* UCFNavigationController.m in Sources */,
-				B85F53DF1852D2C20017CB23 /* UCFSignupViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
