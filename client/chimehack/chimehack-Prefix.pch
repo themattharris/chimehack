@@ -16,4 +16,6 @@
     #import <Foundation/Foundation.h>
 
     #import <MNColorKit/MNColorKit.h>
+
+    #define UIViewAutoresizingFlexibleWidthAndHeight (UIViewAutoresizingFlexibleWidth || UIViewAutoresizingFlexibleHeight)
 #endif

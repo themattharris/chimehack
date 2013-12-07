@@ -1,0 +1,11 @@
+<p>
+  <strong>Currency:</strong>
+  <%= @donation.currency %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @donation.value %>
+</p>
+
+<p><%= link_to 'Edit', edit_donation_path(@donation) %> | <%= link_to 'Directory', donations_path %></p>
