@@ -49,7 +49,7 @@ class User < ActiveRecord::Base
 
   def as_json(options)
     result = super({:only => [:name, :email, :phone]}.merge(options))
-    result = result.reject{ |a,b| b.nil? }
+    result = result.reject { |a,b| b.nil? }
     result
   end
 
