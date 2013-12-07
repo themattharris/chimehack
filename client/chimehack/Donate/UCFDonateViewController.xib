@@ -7,6 +7,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UCFDonateViewController">
             <connections>
                 <outlet property="achievedLabel" destination="Il2-ut-iVl" id="LjQ-2H-SHu"/>
+                <outlet property="headerLabel" destination="9J7-il-VCw" id="IDH-oh-lqf"/>
                 <outlet property="nameLabel" destination="LFv-di-umQ" id="Tqx-SC-6wi"/>
                 <outlet property="valuationLabel" destination="ehe-c1-cqr" id="lue-xh-cVo"/>
                 <outlet property="valueSlider" destination="Iqv-Kk-dNc" id="8qR-cK-ORa"/>
@@ -18,9 +19,12 @@
             <rect key="frame" x="0.0" y="64" width="320" height="504"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trick orTreat for" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9J7-il-VCw">
-                    <rect key="frame" x="20" y="10" width="150" height="30"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trick orTreat for Unicef" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9J7-il-VCw">
+                    <rect key="frame" x="20" y="10" width="280" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="xUt-fM-7UF"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
                     <color key="textColor" red="0.9215686917" green="0.45882356169999999" blue="0.18823531269999999" alpha="1" colorSpace="deviceRGB"/>
                     <nil key="highlightedColor"/>
@@ -69,14 +73,6 @@
                     <color key="textColor" red="0.9215686917" green="0.45882356169999999" blue="0.18823531269999999" alpha="1" colorSpace="deviceRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="logo-unicef" translatesAutoresizingMaskIntoConstraints="NO" id="UQg-cH-lAW">
-                    <rect key="frame" x="178" y="13" width="100" height="22"/>
-                    <autoresizingMask key="autoresizingMask"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="22" id="Xnc-22-yIZ"/>
-                        <constraint firstAttribute="width" constant="100" id="z70-Ra-rlB"/>
-                    </constraints>
-                </imageView>
                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Iqv-Kk-dNc">
                     <rect key="frame" x="33" y="251" width="249" height="31"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -93,13 +89,13 @@
                     <autoresizingMask key="autoresizingMask"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iKe-m1-SOd">
-                    <rect key="frame" x="35" y="348" width="243" height="45"/>
+                    <rect key="frame" x="35" y="348" width="244" height="45"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.9215686917" green="0.45882356169999999" blue="0.18823531269999999" alpha="1" colorSpace="deviceRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="45" id="Kta-hw-1o4"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                     <state key="normal" title="Donate with Credit Card">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -115,7 +111,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="45" id="1oS-Do-yBQ"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                     <state key="normal" title="Send Email">
                         <color key="titleColor" red="0.9215686917" green="0.45882356169999999" blue="0.18823531269999999" alpha="1" colorSpace="deviceRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -127,17 +123,14 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="9J7-il-VCw" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="20" symbolic="YES" id="1kP-z4-sV0"/>
                 <constraint firstItem="V9n-jR-ndZ" firstAttribute="trailing" secondItem="Il2-ut-iVl" secondAttribute="trailing" id="2LB-Jw-QwV"/>
                 <constraint firstItem="LFv-di-umQ" firstAttribute="leading" secondItem="Il2-ut-iVl" secondAttribute="leading" id="2sV-vP-atX"/>
                 <constraint firstItem="V9n-jR-ndZ" firstAttribute="leading" secondItem="Il2-ut-iVl" secondAttribute="leading" id="3nJ-qx-UwP"/>
+                <constraint firstItem="9J7-il-VCw" firstAttribute="top" secondItem="1" secondAttribute="top" constant="10" id="664-y5-3az"/>
                 <constraint firstItem="Iqv-Kk-dNc" firstAttribute="leading" secondItem="iKe-m1-SOd" secondAttribute="leading" id="7QA-4V-XLR"/>
                 <constraint firstItem="W12-Ko-9kB" firstAttribute="baseline" secondItem="HZU-Gy-e3K" secondAttribute="baseline" id="89A-Ky-NbY"/>
                 <constraint firstItem="W12-Ko-9kB" firstAttribute="top" secondItem="HZU-Gy-e3K" secondAttribute="top" id="8hq-IF-7gU"/>
-                <constraint firstItem="UQg-cH-lAW" firstAttribute="leading" secondItem="9J7-il-VCw" secondAttribute="trailing" constant="8" symbolic="YES" id="AXR-aT-F4E"/>
-                <constraint firstItem="UQg-cH-lAW" firstAttribute="top" secondItem="1" secondAttribute="top" constant="13" id="Ckf-GV-jmD"/>
-                <constraint firstItem="E9z-JP-KoF" firstAttribute="top" secondItem="9J7-il-VCw" secondAttribute="bottom" constant="10" id="Fca-3X-yd5"/>
-                <constraint firstItem="9J7-il-VCw" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="20" symbolic="YES" id="Ffj-kF-f9E"/>
-                <constraint firstItem="9J7-il-VCw" firstAttribute="leading" secondItem="LFv-di-umQ" secondAttribute="leading" id="FiR-DU-Iv1"/>
                 <constraint firstItem="ehe-c1-cqr" firstAttribute="trailing" secondItem="V9n-jR-ndZ" secondAttribute="trailing" id="GSl-wT-dm7"/>
                 <constraint firstItem="Iqv-Kk-dNc" firstAttribute="centerY" secondItem="HZU-Gy-e3K" secondAttribute="centerY" constant="-1" id="Gok-Tw-wNQ"/>
                 <constraint firstItem="E9z-JP-KoF" firstAttribute="centerX" secondItem="LFv-di-umQ" secondAttribute="centerX" id="LyZ-aJ-T2j"/>
@@ -150,21 +143,21 @@
                 <constraint firstItem="6hl-bM-fND" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="33" id="RCK-WM-1qB"/>
                 <constraint firstItem="iKe-m1-SOd" firstAttribute="top" secondItem="ehe-c1-cqr" secondAttribute="bottom" constant="32" id="RbR-7a-9DC"/>
                 <constraint firstAttribute="trailing" secondItem="6hl-bM-fND" secondAttribute="trailing" constant="40" id="S06-1z-RTl"/>
-                <constraint firstItem="UQg-cH-lAW" firstAttribute="trailing" secondItem="iKe-m1-SOd" secondAttribute="trailing" id="SeM-6f-v8e"/>
+                <constraint firstItem="9J7-il-VCw" firstAttribute="trailing" secondItem="LFv-di-umQ" secondAttribute="trailing" id="T96-Y7-411"/>
                 <constraint firstItem="6hl-bM-fND" firstAttribute="centerX" secondItem="iKe-m1-SOd" secondAttribute="centerX" id="VHo-bV-0XY"/>
+                <constraint firstItem="9J7-il-VCw" firstAttribute="leading" secondItem="LFv-di-umQ" secondAttribute="leading" id="VhH-dq-xvq"/>
                 <constraint firstItem="Il2-ut-iVl" firstAttribute="top" secondItem="LFv-di-umQ" secondAttribute="bottom" id="YJs-I8-pdh"/>
                 <constraint firstAttribute="trailing" secondItem="LFv-di-umQ" secondAttribute="trailing" constant="20" symbolic="YES" id="ZFY-ZD-MZD"/>
+                <constraint firstItem="E9z-JP-KoF" firstAttribute="top" secondItem="9J7-il-VCw" secondAttribute="bottom" constant="10" id="eQ2-QN-6df"/>
                 <constraint firstItem="HZU-Gy-e3K" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="2" id="fTC-0I-KSy"/>
                 <constraint firstItem="LFv-di-umQ" firstAttribute="top" secondItem="E9z-JP-KoF" secondAttribute="bottom" constant="11" id="i27-wU-ZPy"/>
                 <constraint firstItem="W12-Ko-9kB" firstAttribute="leading" secondItem="Iqv-Kk-dNc" secondAttribute="trailing" id="imz-cN-DAf"/>
                 <constraint firstAttribute="bottom" secondItem="6hl-bM-fND" secondAttribute="bottom" constant="58" id="lNr-tg-7jP"/>
                 <constraint firstItem="Il2-ut-iVl" firstAttribute="trailing" secondItem="LFv-di-umQ" secondAttribute="trailing" id="mfG-GC-J2T"/>
-                <constraint firstItem="9J7-il-VCw" firstAttribute="top" secondItem="1" secondAttribute="top" constant="10" id="pwu-O1-cgP"/>
                 <constraint firstItem="6hl-bM-fND" firstAttribute="top" secondItem="iKe-m1-SOd" secondAttribute="bottom" constant="8" symbolic="YES" id="q0l-Wa-Ct6"/>
                 <constraint firstItem="Iqv-Kk-dNc" firstAttribute="top" secondItem="V9n-jR-ndZ" secondAttribute="bottom" constant="14" id="uBH-gU-Jwn"/>
                 <constraint firstItem="Iqv-Kk-dNc" firstAttribute="leading" secondItem="HZU-Gy-e3K" secondAttribute="trailing" constant="6" id="uvK-II-gMk"/>
                 <constraint firstItem="V9n-jR-ndZ" firstAttribute="top" secondItem="Il2-ut-iVl" secondAttribute="bottom" constant="28" id="wPw-Nz-qhI"/>
-                <constraint firstItem="E9z-JP-KoF" firstAttribute="top" secondItem="UQg-cH-lAW" secondAttribute="bottom" constant="15" id="wy0-xc-aB3"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
@@ -172,7 +165,6 @@
         </view>
     </objects>
     <resources>
-        <image name="logo-unicef" width="100" height="24"/>
         <image name="photo-user" width="84" height="88"/>
     </resources>
 </document>

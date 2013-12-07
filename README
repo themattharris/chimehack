@@ -21,3 +21,31 @@ web and iphone flows (Phase 1): https://drive.google.com/#folders/0B7yysWiQbKCkU
 
 accessible interwebs version: http://chimehack.tokofu.net
 - it's running in dev mode so be aware that it will show more debug information
+
+
+
+API
+===
+Authentication: not yet (be good to me)
+Formats supported: json
+Caveats: model validations are being added - so it will just let anything happen now
+
+Endpoints
+---------
+Create User
+method: POST
+path: /api/user.json
+params:
+- name: string
+- email: string
+- phone: string
+
+response:
+{
+  "id": 6,
+  "name": "bob",
+  "email": null,
+  "phone": null,
+  "created_at": "2013-12-07T18:29:25.509Z",
+  "updated_at": "2013-12-07T18:29:25.509Z"
+}

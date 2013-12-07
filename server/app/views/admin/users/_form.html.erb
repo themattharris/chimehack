@@ -1,0 +1,37 @@
+<%= form_for [:admin, @user] do |f| %>
+  <% if @user.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+    <ul>
+    <% @user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+
+  <fieldset>
+    <p>
+      <%= f.label :name %><br>
+      <%= f.text_field :name %>
+    </p>
+
+    <p>
+      <%= f.label :email %><br>
+      <%= f.text_field :email %>
+    </p>
+
+    <p>
+      <%= f.label :phone %><br>
+      <%= f.text_field :phone %>
+    </p>
+
+    <%= f.collection_select(:team_ids, @teams, :id,:name)%>
+  </fieldset>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+<p><%= link_to 'Back', admin_users_path %> | <%= link_to 'Admin', admin_path %></p>

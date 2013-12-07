@@ -16,7 +16,7 @@ Server::Application.routes.draw do
   get 'donations/new' => 'donations#new'
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
-  scope '/admin' do
+  namespace :admin do
     resources :challenges
     resources :donations
     resources :incentives
@@ -24,6 +24,9 @@ Server::Application.routes.draw do
     resources :teams
   end
 
+  namespace :api do
+    post 'user.:format' => 'users#create'
+  end
   # Example resource route with options:
   #   resources :products do
   #     member do

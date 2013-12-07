@@ -1,0 +1,11 @@
+<p>
+  <strong>Value:</strong>
+  <%= @incentive.value %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @incentive.description %>
+</p>
+
+<p><%= link_to 'Edit', edit_admin_incentive_path(@incentive) %> | <%= link_to 'Directory', admin_incentives_path %> | <%= link_to 'Admin', admin_path %></p>
