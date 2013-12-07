@@ -49,7 +49,17 @@ static NSString * const kUCFSettingSignedInUserName = @"user_name";
 
 - (void)setSignedInUserId:(NSString *)signedInUserId
 {
-    [self _setDefault:signedInUserId forKey:kUCFSettingSignedInUserName];
+    [self _setDefault:signedInUserId forKey:kUCFSettingSignedInUserId];
+}
+
+- (NSString *)signedInUserName
+{
+    return [_defaults stringForKey:kUCFSettingSignedInUserName];
+}
+
+- (void)setSignedInUserName:(NSString *)signedInUserName
+{
+    [self _setDefault:signedInUserName forKey:kUCFSettingSignedInUserName];
 }
 
 - (void)signOut

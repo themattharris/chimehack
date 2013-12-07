@@ -142,7 +142,7 @@
         emailText = [emailText stringByReplacingCharactersInRange:range withString:string];
     }
     
-    isComplete = [emailText ucf_isValidEmailAddress] && nameText.length > 0;
+    isComplete = [emailText ucf_isValidEmailAddress] && nameText.length >= 2;
     
     self.navigationItem.rightBarButtonItem.enabled = isComplete;
     

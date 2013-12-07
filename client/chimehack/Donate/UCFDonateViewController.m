@@ -11,6 +11,8 @@
 #import "UCFSendEmailViewController.h"
 #import "UCFCreditCardViewController.h"
 
+#import "UCFSettings.h"
+
 @interface UCFDonateViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *headerLabel;
 @property (strong, nonatomic) IBOutlet UILabel *nameLabel;
@@ -31,8 +33,6 @@
     self.tabBarItem = [UITabBarItem ucf_tabBarItemWithBaseName:@"tabbar-unicef" title:self.title];
 
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(_didTapReloadButton:)];
-//    self.navigationItem.rightBarButtonItem.tintColor = [UIColor whiteColor];
-    
 
     return self;
 }
@@ -47,12 +47,20 @@
     [self.valueSlider setThumbImage:thumbImage forState:UIControlStateNormal];
     [self.valueSlider setThumbImage:thumbImage forState:UIControlStateHighlighted];
     
+    NSString *userName = [[UCFSettings sharedInstace] signedInUserName];
+    NSString *nameString = [NSString stringWithFormat:@"%@ raised", userName];
+    _nameLabel.text = nameString;
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
 
+}
+
+
+- (void)updateViewWithData:(NSDictionary *)data
+{
 }
 
 - (void)didReceiveMemoryWarning
