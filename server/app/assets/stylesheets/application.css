@@ -74,12 +74,16 @@ h5 strong {
   font-weight: 400;
 }
 
-.circle .image-wrap {
+.circle {
   -webkit-border-radius: 50em;
   -moz-border-radius: 50em;
-  border-radius: 50em;
+  border-radius: 300px;
+  margin: 1em auto 0;
   border: 3px solid #FFF;
   box-shadow: 1px 1px 1px 0px #aaa;
+  width: 150px;
+  height: 150px;
+  background: url(/assets/sadkid.jpg) no-repeat;
 }
 
 .btn-donate {

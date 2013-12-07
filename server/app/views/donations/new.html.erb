@@ -1,8 +1,6 @@
-<div class="row centered">
+<div class="centered">
   <%= image_tag "social-btns.jpg" -%>
-  <div class="col-md-12 circle pad-photo">
-    <span class="image-wrap " style="position:relative; display:inline-block; background:url(/assets/sadkid.jpg) no-repeat center center; width: 150px; height: 150px;"><img src="/assets/sadkid.jpg" style="opacity: 0;"></span>
-  </div>
+  <div class="circle pad_photo"></div>
   <h5>Allison's raised <br /><strong>$30</strong> of the <strong>$500</strong> goal</h5>
 </div>
 
@@ -10,14 +8,14 @@
 <form role="form" style="max-width: 500px">
   <div class="input-group">
     <span class="input-group-addon">$</span>
-    <input type="text" id="donation_amount" style="width: 100px;" name="amount" class="form-control" placeholder="amount">
+    <input type="text" id="donation_amount" style="width: 100px;" name="amount" class="form-control" placeholder="amount" pattern="\d*">
   </div>
   <div class='centered'><h6><em>All donations are tax deductable</em></h6></div>
   <br />
   <ul class="nav nav-tabs">
     <li><a href="#">Paypal</a></li>
     <li class="active"><a href="#">Credit Card</a></li>
-    <li><a href="#">Bitcoin</a></li>
+    <li><a href="#">Check</a></li>
   </ul>
   <fieldset>
     <%= image_tag "credit-card-icons.jpg", :style => 'margin: 0.5em 0' -%>
