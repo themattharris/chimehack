@@ -10,4 +10,11 @@ class Challenge < ActiveRecord::Base
       c.save
     end
   end
+
+  def target
+    read_attribute(:target).to_f
+  end
+  def current
+    read_attribute(:current).to_f
+  end
 end

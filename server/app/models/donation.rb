@@ -11,6 +11,10 @@ class Donation < ActiveRecord::Base
   validates_presence_of :referrer, :message => ": i can't find anyone with that referrer ID"
   validates_numericality_of :value, :greater_than_or_equal_to => 1, :less_than_or_equal_to => 100000000, :message => ": please donate at least $1"
 
+  def value
+    read_attribute(:value).to_f
+  end
+
   def as_json(options)
     result = super({
       :only => [:currency, :value],
@@ -20,8 +24,7 @@ class Donation < ActiveRecord::Base
         challenge: { only: [:name, :target, :current] }
     }}.merge(options))
 
-    result = result.reject { |a,b| b.nil? }
-    result
+    result = result.reject { |k,v| v.nil? }
   end
 
   private

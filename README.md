@@ -94,7 +94,7 @@ project for the unicef trick or treat project.
 * **method**: GET
 * **path**: /api/donations/for_donor.json
 * **params**:
-  * `donor_id`: integer : required
+  * `id`: integer : required
 * **example**
   * `/api/donations/for_donor.json?id=2`
 * **response**:
@@ -127,7 +127,7 @@ project for the unicef trick or treat project.
 * **method**: GET
 * **path**: /api/donations/for_referrer.json
 * **params**:
-  * `referrer_id`: integer : required
+  * `id`: integer : required
 * **example**
   * `/api/donations/for_referrer.json?id=1`
 * **response**:
