@@ -187,3 +187,104 @@ project for the unicef trick or treat project.
   ]
 }
 ```
+
+
+#### Incentives
+* **method**: GET
+* **path**: /api/incentives.json
+* **params**:
+  * _none_
+* **example**
+  * `/api/incentives.json`
+* **response**:
+
+```json
+[
+  {
+    "value": 6,
+    "description": "A soccer ball for children in refugee camps."
+  },
+  {
+    "value": 20,
+    "description": "Bed nets to protect families from deadly malaria-carrying mosquitoes."
+  },
+  {
+    "value": 35,
+    "description": "Vaccines to protect 50 kids from killer diseases."
+  },
+  {
+    "value": 70,
+    "description": "High-protein peanut paste to protect kids from malnutrition."
+  },
+  {
+    "value": 100,
+    "description": "A bicycle to deliver medicines."
+  },
+  {
+    "value": 240,
+    "description": "A School-in-a-Box kit that lets kids learn anywhere."
+  },
+  {
+    "value": 500,
+    "description": "A pump that provides clean water to a village or school."
+  },
+  {
+    "value": 2800,
+    "description": "A motorbike ambulance that travels easily."
+  }
+]
+```
+
+
+#### Donations by referrer
+* **method**: GET
+* **path**: /api/incentive.json
+* **params**:
+  * `value`: integer : required
+* **example**
+  * `/api/incentive.json?value=500`
+* **response**:
+
+```json
+{
+  "total_value": 15.0,
+  "count": 2,
+  "donations": [
+    {
+      "currency": "USD",
+      "value": "50.0",
+      "donor": {
+        "id": 8,
+        "name": "greentea"
+      },
+      "referrer": {
+        "id": 1,
+        "name": "allison l"
+      },
+      "challenge": {
+        "name": "chimehack",
+        "target": "500.0",
+        "current": "200.0"
+      }
+    },
+    {
+      "currency": "USD",
+      "value": "25.0",
+      "donor": {
+        "id": 9,
+        "name": "coffeeandtv"
+      },
+      "referrer": {
+        "id": 1,
+        "name": "allison l"
+      },
+      "challenge": {
+        "name": "chimehack",
+        "target": "500.0",
+        "current": "200.0"
+      }
+    }
+  ]
+}
+```
+

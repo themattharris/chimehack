@@ -32,6 +32,9 @@ Server::Application.routes.draw do
     post 'donate.:format' => 'donations#create'
     get 'donations/for_donor.:format' => 'donations#show_for_donor'
     get 'donations/for_referrer.:format' => 'donations#show_for_referrer'
+
+    get 'incentives.:format' => 'incentives#index'
+    get 'incentive.:format' => 'incentives#show'
   end
   # Example resource route with options:
   #   resources :products do
