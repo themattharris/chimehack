@@ -15,7 +15,8 @@ class Donation < ActiveRecord::Base
       :only => [:currency, :value],
       :include => {
         donor: { only: [:id, :name] },
-        referrer: { only: [:id, :name] }
+        referrer: { only: [:id, :name] },
+        challenge: { only: [:name, :target] }
     }}.merge(options))
 
     result = result.reject { |a,b| b.nil? }
@@ -25,5 +26,6 @@ class Donation < ActiveRecord::Base
   private
   def default_values
     (self.currency ||= 'USD').upcase
+    self.challenge_id = 1
   end
 end

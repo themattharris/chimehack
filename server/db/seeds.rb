@@ -64,7 +64,7 @@ challenges = Challenge.create([
   {
     name: 'chimehack',
     description: '#chimehack event, December 5-7, 2013',
-    target: 50000.00,
+    target: 500.00,
     currency: 'USD',
     current: 0.00,
     target_date: '2013-12-07',
@@ -85,41 +85,49 @@ challenges = Challenge.create([
 
 donations = Donation.create([
   {
+    challenge: challenges[1],
     donor: users[1],
     referrer: users.first,
     value: 15.00
   },
   {
+    challenge: challenges[1],
     donor: users[2],
     referrer: users.first,
     value: 15.00
   },
   {
+    challenge: challenges[1],
     donor: users[3],
     referrer: users.first,
     value: 25.00
   },
   {
+    challenge: challenges[1],
     donor: users[4],
     referrer: users.first,
     value: 50.00
   },
-    {
+  {
+    challenge: challenges[1],
     donor: users[5],
     referrer: users.first,
     value: 5.00
   },
   {
+    challenge: challenges[1],
     donor: users[6],
     referrer: users.first,
     value: 15.00
   },
   {
+    challenge: challenges[1],
     donor: users[7],
     referrer: users.first,
     value: 50.00
   },
   {
+    challenge: challenges[1],
     donor: users[8],
     referrer: users.first,
     value: 25.00
