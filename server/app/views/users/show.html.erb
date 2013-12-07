@@ -1,16 +1,25 @@
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
+<h1><%= @user.name %></h1>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
+<% if @user.has_contact_info? %>
+<dl>
+  <% if @user.has_email? %>
+  <dt>Email</dt>
+  <dd><%= @user.email %></dd>
+  <% end %>
+  <% if @user.has_phone? %>
+  <dt>Phone</dt>
+  <dd><%= @user.phone %></dd>
+  <% end %>
+</dl>
+<% end %>
 
-<p>
-  <strong>Phone:</strong>
-  <%= @user.phone %>
-</p>
+<% if @user.has_teams? %>
+<h2>Team Memberships</h2>
+<ul>
+<% @user.teams.each do |team| %>
+  <li><%= team.name %></li>
+<% end %>
+</ul>
+<% end %>
 
-<p><%= link_to 'Edit', edit_user_path(@user) %> | <%= link_to 'Directory', users_path %></p>
+<p><%= link_to 'Edit', edit_user_path(@user) %> | <%= link_to 'Directory', users_path %> | <%= link_to 'Admin', admin_path %></p>

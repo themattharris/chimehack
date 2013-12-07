@@ -28,6 +28,10 @@ class TeamsController < ApplicationController
   end
 
   def show
+    @team = Team.find(params[:id])
+  end
+
+  def profile
     # Don't explode on missing team while in demo
     @team = Team.find_by_id(params[:id])
   end

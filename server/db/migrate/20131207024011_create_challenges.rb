@@ -7,8 +7,9 @@ class CreateChallenges < ActiveRecord::Migration
       t.string :currency, :limit => 5
       t.decimal :current, :precision => 8, :scale => 2
       t.datetime :target_date
-      t.integer :creator_id
-      t.integer :team_id
+
+      t.belongs_to :creator, :class_name => "User"
+      t.belongs_to :team
 
       t.timestamps
     end
