@@ -26,6 +26,8 @@ updateDonation = (val) ->
   $(".donationReward").text("$" + val + " - " + text)
 
 $().ready ->
+  if ($('.slider').length == 0)
+    return false
   $('.slider').slider
     orientation:'vertical'
     min: MIN
