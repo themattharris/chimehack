@@ -9,6 +9,7 @@
 #import "UCFSettings.h"
 
 static NSString * const kUCFSettingSignedInUserId = @"user_id";
+static NSString * const kUCFSettingSignedInUserName = @"user_name";
 
 @implementation UCFSettings
 {
@@ -48,7 +49,13 @@ static NSString * const kUCFSettingSignedInUserId = @"user_id";
 
 - (void)setSignedInUserId:(NSString *)signedInUserId
 {
-    [self _setDefault:signedInUserId forKey:kUCFSettingSignedInUserId];
+    [self _setDefault:signedInUserId forKey:kUCFSettingSignedInUserName];
+}
+
+- (void)signOut
+{
+    [_defaults removeObjectForKey:kUCFSettingSignedInUserId];
+    [_defaults removeObjectForKey:kUCFSettingSignedInUserName];
 }
 
 

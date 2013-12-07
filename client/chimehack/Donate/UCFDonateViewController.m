@@ -30,6 +30,10 @@
     self.title = NSLocalizedString(@"Donate", nil);
     self.tabBarItem = [UITabBarItem ucf_tabBarItemWithBaseName:@"tabbar-unicef" title:self.title];
 
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(_didTapReloadButton:)];
+//    self.navigationItem.rightBarButtonItem.tintColor = [UIColor whiteColor];
+    
+
     return self;
 }
 
@@ -42,12 +46,24 @@
     UIImage *thumbImage = [UIImage imageNamed:@"btn-drag-circle"];
     [self.valueSlider setThumbImage:thumbImage forState:UIControlStateNormal];
     [self.valueSlider setThumbImage:thumbImage forState:UIControlStateHighlighted];
+    
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)_didTapReloadButton:(id)sender
+{
+    
 }
 
 - (IBAction)didChangeSliderValue:(id)sender {

@@ -12,6 +12,9 @@
 
 + (instancetype)sharedInstace;
 
+- (void)signOut;
+
 @property(nonatomic)NSString *signedInUserId;
+@property(nonatomic)NSString *signedInUserName;
 
 @end
