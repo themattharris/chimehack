@@ -136,6 +136,10 @@ donations = Donation.create([
 
 incentives = Incentive.create([
   {
+    value: 1,
+    description: "Protein biscuits for a hungry child."
+  },
+  {
     value: 6,
     description: "A soccer ball for children in refugee camps."
   },
