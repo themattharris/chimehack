@@ -18,6 +18,16 @@
 {
     [super viewDidLoad];
     
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"LaunchImage-700-568h@2x" ofType:@"png"];
+    UIImage *image = [UIImage imageWithContentsOfFile:path];
+    
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+    imageView.autoresizingMask = UIViewAutoresizingFlexibleWidthAndHeight;
+    imageView.contentMode = UIViewContentModeTop;
+
+    imageView.frame = self.view.bounds;
+    [self.view addSubview:imageView];
+    
     self.view.backgroundColor = RGBX(0xEB7530);
 }
 
