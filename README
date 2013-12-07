@@ -34,7 +34,7 @@ Endpoints
 ---------
 Create User
 method: POST
-path: /api/users.json
+path: /api/user.json
 params:
 - name: string
 - email: string
