@@ -22,10 +22,12 @@ rewards = [
 ]
 
 updateDonation = (val) ->
+  # OMG this is bad, don't judge me
+  localStorage.currentDonation = val
   text = rewards[Math.floor(Math.abs(val)/STEP)] || rewards[rewards.length - 1]
   $(".donationReward").text("$" + val + " - " + text)
 
-$().ready ->
+ready = ->
   if ($('.slider').length == 0)
     return false
   $('.slider').slider
@@ -36,4 +38,7 @@ $().ready ->
   $('.slider').on 'slide', (ev) ->
     updateDonation(ev.value)
   updateDonation(INITIAL)
+
+$(document).ready ready
+$(document).on('page:load', ready);
 

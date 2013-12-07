@@ -23,7 +23,6 @@ table {
 }
 
 .container {
-  max-width: 600px;
 }
 
 .header {
@@ -42,6 +41,15 @@ table {
 
 .centered {
   text-align: center;
+}
+
+.nav-tabs li.active a {
+  font-weight: 600;
+  color: rgb(251,103,0);
+}
+
+.nav-tabs a {
+  color: #555;
 }
 
 .pad-photo {

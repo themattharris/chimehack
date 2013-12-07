@@ -8,14 +8,19 @@
 
 <h2>Enter an amount *</h2>
 <form role="form" style="max-width: 500px">
-  <input type="text" id="amount" name="amount" class="form-control" placeholder="amount">
+  <div class="input-group">
+    <span class="input-group-addon">$</span>
+    <input type="text" id="donation_amount" style="width: 100px;" name="amount" class="form-control" placeholder="amount">
+  </div>
   <div class='centered'><h6><em>All donations are tax deductable</em></h6></div>
   <br />
-
+  <ul class="nav nav-tabs">
+    <li><a href="#">Paypal</a></li>
+    <li class="active"><a href="#">Credit Card</a></li>
+    <li><a href="#">Bitcoin</a></li>
+  </ul>
   <fieldset>
-    <div id="legend">
-      <legend class="">Payment <%= image_tag "credit-card-icons.jpg", :style => 'margin: 0 0 5px 20px' -%></legend>
-    </div>
+    <%= image_tag "credit-card-icons.jpg", :style => 'margin: 0.5em 0' -%>
 
     <!-- Name -->
     <div class="control-group">
@@ -84,7 +89,7 @@
     <!-- Submit -->
     <div class="control-group">
       <div class="controls">
-        <button class="btn btn-success">Pay Now</button>
+        <a class="btn btn-success" href="/donations/thanks">Pay Now</a>
       </div>
     </div>
 
