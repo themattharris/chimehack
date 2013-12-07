@@ -10,7 +10,7 @@
 
 #import "UCFDonateViewController.h"
 
-@interface UCFMainTabController ()
+@interface UCFMainTabController () <UITabBarControllerDelegate>
 
 @end
 
@@ -20,7 +20,8 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        
+        self.delegate = self;
     }
     return self;
 }
@@ -30,6 +31,7 @@
     [super viewDidLoad];
     
     self.tabBar.barStyle = UIBarStyleDefault;
+    self.tabBar.tintColor = [UIColor ucf_orange];
     [self setViewControllers:@[[[UCFDonateViewController alloc] init]]];
 }
 
@@ -37,6 +39,17 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)setViewControllers:(NSArray *)viewControllers animated:(BOOL)animated
+{
+    [super setViewControllers:viewControllers animated:animated];
+    self.navigationItem.title = self.selectedViewController.title;
+}
+
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
+{
+    self.navigationItem.title = viewController.title;
 }
 
 @end

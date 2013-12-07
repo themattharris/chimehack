@@ -128,7 +128,7 @@
 
 - (void)_didTapJoinButton:(id)sender
 {
-    
+    [_delegate signupViewControllerDidComplete:self];
 }
 
 - (void)willShowKeyboard:(NSNotification *)notification

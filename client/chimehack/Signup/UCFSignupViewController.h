@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol UCFSignupViewControllerDelegate;
+
 @interface UCFSignupViewController : UIViewController
+@property(nonatomic,weak)id<UCFSignupViewControllerDelegate>delegate;
+@end
+
+
+@protocol UCFSignupViewControllerDelegate <NSObject>
+
+- (void)signupViewControllerDidComplete:(UCFSignupViewController *)controller;
 
 @end

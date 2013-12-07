@@ -52,6 +52,7 @@
     [super viewDidLoad];
 
     self.navigationBar.barTintColor = [UIColor ucf_orange];
+    self.navigationBar.translucent = NO;
     self.navigationBar.titleTextAttributes = @{ NSForegroundColorAttributeName : [UIColor whiteColor],
                                                 NSFontAttributeName : [UIFont ucf_fontWithSize:22]};
 }
