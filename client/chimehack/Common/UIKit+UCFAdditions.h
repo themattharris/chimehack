@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <AutoLayoutShorthand/AutoLayoutShorthand.h>
+#import "UCFUnderlinedTextField.h"
 
 @interface UIView (UCFAdditions)
 
@@ -39,4 +40,8 @@
 
 + (UITabBarItem *)ucf_tabBarItemWithBaseName:(NSString *)baseName title:(NSString *)title;
 
+@end
+
+@interface UIBarButtonItem (UCFAdditions)
++ (UIBarButtonItem *)ucf_barButtonItemWithTitle:(NSString *)title target:(id)target action:(SEL)action;
 @end

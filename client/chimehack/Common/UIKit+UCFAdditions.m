@@ -57,6 +57,17 @@
 
 @end
 
+@implementation UIBarButtonItem (UCFAdditions)
+
++ (UIBarButtonItem *)ucf_barButtonItemWithTitle:(NSString *)title target:(id)target action:(SEL)action
+{
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:title style:UIBarButtonItemStylePlain target:target action:action];
+    item.tintColor = [UIColor whiteColor];
+    return item;
+}
+
+@end
+
 @implementation UIViewController (UCFAdditions)
 
 - (CGRect)ucf_frameForView:(UIView *)view givenKeyboardFrame:(CGRect)keyboardFrame;

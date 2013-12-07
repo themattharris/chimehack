@@ -26,6 +26,11 @@ Server::Application.routes.draw do
 
   namespace :api do
     post 'user.:format' => 'users#create'
+    get 'user.:format' => 'users#show'
+
+    post 'donate.:format' => 'donations#create'
+    get 'donations/for_donor.:format' => 'donations#show_for_donor'
+    get 'donations/for_referrer.:format' => 'donations#show_for_referrer'
   end
   # Example resource route with options:
   #   resources :products do

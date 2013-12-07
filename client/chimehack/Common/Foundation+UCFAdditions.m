@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Unicef. All rights reserved.
 //
 
-#import "NSAttributedString+UCFAdditions.h"
+#import "Foundation+UCFAdditions.h"
 
 @implementation NSAttributedString (UCFAdditions)
 

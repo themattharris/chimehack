@@ -20,7 +20,7 @@
     if (!self) return nil;
     
     self.title = NSLocalizedString(@"Settings", nil);
-    self.tabBarItem = [UITabBarItem ucf_tabBarItemWithBaseName:@"tabbar-star" title:self.title];
+    self.tabBarItem = [UITabBarItem ucf_tabBarItemWithBaseName:@"tabbar-gear" title:self.title];
     
     return self;
 }

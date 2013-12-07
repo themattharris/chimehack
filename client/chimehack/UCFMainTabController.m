@@ -39,7 +39,10 @@
                                [[UCFDonateViewController alloc] init],
                                [[UCFSettingsViewController alloc] init],
                                ]];
-    self.selectedViewController = self.viewControllers[1];
+    
+    UIViewController *firstController =self.viewControllers[1];
+    self.selectedViewController = firstController;
+    self.navigationItem.title = firstController.title;
 }
 
 - (void)didReceiveMemoryWarning
@@ -48,15 +51,11 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)setViewControllers:(NSArray *)viewControllers animated:(BOOL)animated
+- (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item
 {
-    [super setViewControllers:viewControllers animated:animated];
     self.navigationItem.title = self.selectedViewController.title;
+    [self setNeedsStatusBarAppearanceUpdate];
 }
 
-- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
-{
-    self.navigationItem.title = viewController.title;
-}
 
 @end

@@ -25,6 +25,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     _rootNavigationController = [[UCFNavigationController alloc] init];
+    _rootNavigationController.navigationBarHidden = YES;
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.rootViewController = _rootNavigationController;
@@ -80,8 +81,10 @@
 {
     UCFMainTabController *tabController = [[UCFMainTabController alloc] init];
     NSArray *controllers = @[tabController];
-    [_rootNavigationController setViewControllers:controllers animated:YES];
-    [_rootNavigationController setNavigationBarHidden:NO animated:YES];
+    
+    BOOL animated = controller == nil;
+    [_rootNavigationController setViewControllers:controllers animated:animated];
+    [_rootNavigationController setNavigationBarHidden:NO animated:animated];
     
     [controller dismissViewControllerAnimated:YES completion:NULL];
 }
