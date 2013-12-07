@@ -12,7 +12,7 @@ class Donation < ActiveRecord::Base
 
   def as_json(options)
     result = super({
-      :only => [:id, :currency, :value],
+      :only => [:currency, :value],
       :include => {
         donor: { only: [:id, :name] },
         referrer: { only: [:id, :name] }

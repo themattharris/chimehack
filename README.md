@@ -63,9 +63,9 @@ project for the unicef trick or treat project.
 * **example**
   * `/api/user.json?id=2`
 * **response**:
-`{  
-  "id": 6,  
-  "name": "bob"  
+`{
+  "id": 6,
+  "name": "bob"
 }`
 
 #### Donate
@@ -90,7 +90,7 @@ project for the unicef trick or treat project.
   }
 }`
 
-#### Donations by donor (in development)
+#### Donations by donor
 * **method**: GET
 * **path**: /api/donations/for_donor.json
 * **params**:
@@ -98,10 +98,39 @@ project for the unicef trick or treat project.
 * **example**
   * `/api/donations/for_donor.json?id=2`
 * **response**:
-``
+`{
+  "total_value": 15.0,
+  "count": 2,
+  "donations": [
+    {
+      "currency": "USD",
+      "value": "5.0",
+      "donor": {
+        "id": 1,
+        "name": "themattharris"
+      },
+      "referrer": {
+        "id": 2,
+        "name": "cindyli"
+      }
+    },
+    {
+      "currency": "USD",
+      "value": "10.0",
+      "donor": {
+        "id": 1,
+        "name": "themattharris"
+      },
+      "referrer": {
+        "id": 2,
+        "name": "cindyli"
+      }
+    }
+  ]
+}`
 
 
-#### Donations by referrer (in development)
+#### Donations by referrer
 * **method**: GET
 * **path**: /api/donations/for_referrer.json
 * **params**:
@@ -109,4 +138,33 @@ project for the unicef trick or treat project.
 * **example**
   * `/api/donations/for_referrer.json?id=2`
 * **response**:
-``
+`{
+  "total_value": 15.0,
+  "count": 2,
+  "donations": [
+    {
+      "currency": "USD",
+      "value": "5.0",
+      "donor": {
+        "id": 1,
+        "name": "themattharris"
+      },
+      "referrer": {
+        "id": 2,
+        "name": "cindyli"
+      }
+    },
+    {
+      "currency": "USD",
+      "value": "10.0",
+      "donor": {
+        "id": 1,
+        "name": "themattharris"
+      },
+      "referrer": {
+        "id": 2,
+        "name": "cindyli"
+      }
+    }
+  ]
+}`
