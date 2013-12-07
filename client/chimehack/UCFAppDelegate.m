@@ -10,8 +10,12 @@
 
 #import "UCFNavigationController.h"
 #import "UCFSignupViewController.h"
+#import "UCFMainTabController.h"
 
 #import "UCFSettings.h"
+
+@interface UCFAppDelegate () <UCFSignupViewControllerDelegate>
+@end
 
 @implementation UCFAppDelegate
 {
@@ -32,9 +36,13 @@
         dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
         dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
             UCFSignupViewController *controller = [[UCFSignupViewController alloc] init];
+            controller.delegate = self;
+            
             UCFNavigationController *navController = [[UCFNavigationController alloc] initWithRootViewController:controller];
             [_rootNavigationController presentViewController:navController animated:YES completion:NULL];
         });
+    } else {
+        [self signupViewControllerDidComplete:nil];
     }
     
 
@@ -66,6 +74,15 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)signupViewControllerDidComplete:(UCFSignupViewController *)controller
+{
+    UCFMainTabController *tabController = [[UCFMainTabController alloc] init];
+    NSArray *controllers = @[tabController];
+    [_rootNavigationController setViewControllers:controllers animated:YES];
+    
+    [controller dismissViewControllerAnimated:YES completion:NULL];
 }
 
 @end

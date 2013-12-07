@@ -12,6 +12,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *nameLabel;
 @property (strong, nonatomic) IBOutlet UILabel *achievedLabel;
 @property (strong, nonatomic) IBOutlet UILabel *valuationLabel;
+@property (weak, nonatomic) IBOutlet UISlider *valueSlider;
 
 @end
 
@@ -21,7 +22,8 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (!self) return nil;
-        
+    
+    self.title = NSLocalizedString(@"Donate", nil);
     self.tabBarItem = [UITabBarItem ucf_tabBarItemWithBaseName:@"tabbar-unicef" title:NSLocalizedString(@"Donate", nil)];
 
     return self;
@@ -30,7 +32,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    UIImage *thumbImage = [UIImage imageNamed:@"btn-drag-circle"];
+    [self.valueSlider setThumbImage:thumbImage forState:UIControlStateNormal];
+    [self.valueSlider setThumbImage:thumbImage forState:UIControlStateHighlighted];
 }
 
 - (void)didReceiveMemoryWarning
