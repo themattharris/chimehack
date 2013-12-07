@@ -63,9 +63,9 @@ project for the unicef trick or treat project.
 * **example**
   * `/api/user.json?id=2`
 * **response**:
-`{
-  "id": 6,
-  "name": "bob",
+`{  
+  "id": 6,  
+  "name": "bob"  
 }`
 
 #### Donate (in development)
@@ -74,12 +74,20 @@ project for the unicef trick or treat project.
 * **params**
   * `donor_id`: integer : required : the id of the person gifting money
   * `referrer_id`: integer : required :  the id of the person collecting money
-  * `currency`: string : optional : the currency of the money gift (defaults to USD)
-  * ....
+  * `value`: double : required : the value to donate (>=1 or <=100000000)
 * **response**:
 `{
   "id": 6,
-  "name": "bob",
+  "currency": "USD",
+  "value": "10.0",
+  "donor": {
+    "id": 1,
+    "name": "themattharris"
+  },
+  "referrer": {
+    "id": 2,
+    "name": "cindyli"
+  }
 }`
 
 #### Donations by donor (in development)
@@ -90,10 +98,7 @@ project for the unicef trick or treat project.
 * **example**
   * `/api/donations/for_donor.json?id=2`
 * **response**:
-`{
-  "id": 6,
-  "name": "bob",
-}`
+``
 
 
 #### Donations by referrer (in development)
@@ -104,7 +109,4 @@ project for the unicef trick or treat project.
 * **example**
   * `/api/donations/for_referrer.json?id=2`
 * **response**:
-`{
-  "id": 6,
-  "name": "bob",
-}`
+``
