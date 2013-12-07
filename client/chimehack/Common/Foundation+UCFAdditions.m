@@ -19,6 +19,13 @@
 
 @implementation NSAttributedString (UCFAdditions)
 
++ (NSAttributedString *)ucf_challengeProgressStringForAmount:(NSNumber *)amount target:(NSNumber *)target
+{
+    NSString *achievedText = NSLocalizedString(@"$%@ of their $%@ goal", nil);
+    achievedText = [NSString stringWithFormat:achievedText, amount, target];
+    return [[NSAttributedString alloc] initWithString:achievedText];
+}
+
 + (NSAttributedString *)ucf_trickOrTreatString
 {
     NSString *baseString = NSLocalizedString(@"Trick or Treat for ", nil);

@@ -9,6 +9,7 @@
                 <outlet property="badgesButton" destination="Nlj-Zc-JtN" id="JEX-Yo-5HO"/>
                 <outlet property="donationsButton" destination="dXo-gL-FUD" id="mA0-OJ-juF"/>
                 <outlet property="donorButton" destination="cIf-1y-hrN" id="bxf-Os-cNv"/>
+                <outlet property="headerLabel" destination="7vp-tU-Wo2" id="CwH-rK-pGr"/>
                 <outlet property="linksButton" destination="GYU-eq-YZR" id="fLd-M9-Opd"/>
                 <outlet property="nameLabel" destination="tFU-dL-Y8F" id="d3v-4c-pw4"/>
                 <outlet property="view" destination="1" id="3"/>

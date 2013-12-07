@@ -13,6 +13,7 @@
 #import "UCFSettings.h"
 
 @interface UCFAchievementsViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *headerLabel;
 @property (weak, nonatomic) IBOutlet UCFAchievementButton *donorButton;
 @property (weak, nonatomic) IBOutlet UCFAchievementButton *donationsButton;
 @property (weak, nonatomic) IBOutlet UCFAchievementButton *linksButton;
@@ -39,6 +40,7 @@
 {
     [super viewDidLoad];
     
+    _headerLabel.attributedText = [NSAttributedString ucf_trickOrTreatString];
     _nameLabel.text = [[UCFSettings sharedInstace] signedInUserName];
     
     [self _updateAchievementsWithData:nil];

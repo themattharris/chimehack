@@ -79,7 +79,7 @@
 
 - (void)fetchDonationsByReferer:(id)referredId completion:(UCFServiceCompletionBlock)completion
 {
-    NSDictionary *parameters = @{@"referrer_id": referredId};
+    NSDictionary *parameters = @{@"id": referredId};
     [self _performGet:@"donations/for_referrer.json" paramters:parameters completion:completion];
 }
 
