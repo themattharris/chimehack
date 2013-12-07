@@ -12,6 +12,7 @@
 #import "UCFCreditCardViewController.h"
 
 #import "UCFSettings.h"
+#import "UCFService.h"
 
 @interface UCFDonateViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *headerLabel;
@@ -48,8 +49,10 @@
     [self.valueSlider setThumbImage:thumbImage forState:UIControlStateHighlighted];
     
     NSString *userName = [[UCFSettings sharedInstace] signedInUserName];
-    NSString *nameString = [NSString stringWithFormat:@"%@ raised", userName];
+    NSString *nameString = [NSString stringWithFormat:NSLocalizedString(@"%@ raised", nil), userName];
     _nameLabel.text = nameString;
+    
+    [self _reloadViewData];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -58,20 +61,32 @@
 
 }
 
+- (void)_reloadViewData
+{
+    id referrerId = [[UCFSettings sharedInstace] signedInUserId];
+    
+    self.navigationItem.rightBarButtonItem.enabled = NO;
+    
+    __weak typeof(self) weakSelf = self;
+    [[UCFService sharedInstance] fetchDonationsByReferer:referrerId completion:^(id result, NSError *error) {
+        weakSelf.navigationItem.rightBarButtonItem.enabled = YES;
+        [weakSelf updateViewWithData:result];
+    }];
+}
 
 - (void)updateViewWithData:(NSDictionary *)data
 {
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    NSNumber *totalValue = data[@"total_value"] ?: @0;
+    
+    NSString *achievedText = NSLocalizedString(@"$%@ of their $500 goal", nil);
+    achievedText = [NSString stringWithFormat:achievedText, totalValue];
+    
+    _achievedLabel.text = achievedText;
 }
 
 - (void)_didTapReloadButton:(id)sender
 {
-    
+    [self _reloadViewData];
 }
 
 - (IBAction)didChangeSliderValue:(id)sender {
