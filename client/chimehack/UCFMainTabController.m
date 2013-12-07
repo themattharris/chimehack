@@ -9,6 +9,8 @@
 #import "UCFMainTabController.h"
 
 #import "UCFDonateViewController.h"
+#import "UCFAchievementsViewController.h"
+#import "UCFSettingsViewController.h"
 
 @interface UCFMainTabController () <UITabBarControllerDelegate>
 
@@ -32,7 +34,12 @@
     
     self.tabBar.barStyle = UIBarStyleDefault;
     self.tabBar.tintColor = [UIColor ucf_orange];
-    [self setViewControllers:@[[[UCFDonateViewController alloc] init]]];
+    [self setViewControllers:@[
+                               [[UCFAchievementsViewController alloc] init],
+                               [[UCFDonateViewController alloc] init],
+                               [[UCFSettingsViewController alloc] init],
+                               ]];
+    self.selectedViewController = self.viewControllers[1];
 }
 
 - (void)didReceiveMemoryWarning

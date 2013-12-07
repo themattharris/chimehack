@@ -17,6 +17,11 @@
 		B85F53F31852EDAC0017CB23 /* UCFDonateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B85F53F11852EDAC0017CB23 /* UCFDonateViewController.xib */; };
 		B85F53F51852EF2F0017CB23 /* UCFDonateViewController.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B85F53F41852EF2F0017CB23 /* UCFDonateViewController.xcassets */; };
 		B85F53F91852F6080017CB23 /* UCFMainTabController.m in Sources */ = {isa = PBXBuildFile; fileRef = B85F53F71852F6080017CB23 /* UCFMainTabController.m */; };
+		B86800DE1853976A003E4610 /* UCFAchievementsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B86800DC1853976A003E4610 /* UCFAchievementsViewController.m */; };
+		B86800DF1853976A003E4610 /* UCFAchievementsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B86800DD1853976A003E4610 /* UCFAchievementsViewController.xib */; };
+		B86800E418539878003E4610 /* UCFSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B86800E218539878003E4610 /* UCFSettingsViewController.m */; };
+		B86800E518539878003E4610 /* UCFSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B86800E318539878003E4610 /* UCFSettingsViewController.xib */; };
+		B86800E818539CA0003E4610 /* NSAttributedString+UCFAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B86800E718539CA0003E4610 /* NSAttributedString+UCFAdditions.m */; };
 		B876F5B71852C2B600ED630A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B876F5B61852C2B600ED630A /* Foundation.framework */; };
 		B876F5B91852C2B600ED630A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B876F5B81852C2B600ED630A /* CoreGraphics.framework */; };
 		B876F5BB1852C2B600ED630A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B876F5BA1852C2B600ED630A /* UIKit.framework */; };
@@ -58,6 +63,14 @@
 		B85F53F41852EF2F0017CB23 /* UCFDonateViewController.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = UCFDonateViewController.xcassets; sourceTree = "<group>"; };
 		B85F53F61852F6080017CB23 /* UCFMainTabController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UCFMainTabController.h; sourceTree = "<group>"; };
 		B85F53F71852F6080017CB23 /* UCFMainTabController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UCFMainTabController.m; sourceTree = "<group>"; };
+		B86800DB1853976A003E4610 /* UCFAchievementsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UCFAchievementsViewController.h; sourceTree = "<group>"; };
+		B86800DC1853976A003E4610 /* UCFAchievementsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UCFAchievementsViewController.m; sourceTree = "<group>"; };
+		B86800DD1853976A003E4610 /* UCFAchievementsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UCFAchievementsViewController.xib; sourceTree = "<group>"; };
+		B86800E118539878003E4610 /* UCFSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UCFSettingsViewController.h; sourceTree = "<group>"; };
+		B86800E218539878003E4610 /* UCFSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UCFSettingsViewController.m; sourceTree = "<group>"; };
+		B86800E318539878003E4610 /* UCFSettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UCFSettingsViewController.xib; sourceTree = "<group>"; };
+		B86800E618539CA0003E4610 /* NSAttributedString+UCFAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+UCFAdditions.h"; sourceTree = "<group>"; };
+		B86800E718539CA0003E4610 /* NSAttributedString+UCFAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+UCFAdditions.m"; sourceTree = "<group>"; };
 		B876F5B31852C2B600ED630A /* chimehack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chimehack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B876F5B61852C2B600ED630A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B876F5B81852C2B600ED630A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -111,6 +124,8 @@
 				B85F53E11852D5C90017CB23 /* UCFSettings.m */,
 				B85F53E31852D7BB0017CB23 /* UIKit+UCFAdditions.h */,
 				B85F53E41852D7BB0017CB23 /* UIKit+UCFAdditions.m */,
+				B86800E618539CA0003E4610 /* NSAttributedString+UCFAdditions.h */,
+				B86800E718539CA0003E4610 /* NSAttributedString+UCFAdditions.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -134,6 +149,26 @@
 				B85F53F41852EF2F0017CB23 /* UCFDonateViewController.xcassets */,
 			);
 			path = Donate;
+			sourceTree = "<group>";
+		};
+		B86800DA18539754003E4610 /* Achievements */ = {
+			isa = PBXGroup;
+			children = (
+				B86800DB1853976A003E4610 /* UCFAchievementsViewController.h */,
+				B86800DC1853976A003E4610 /* UCFAchievementsViewController.m */,
+				B86800DD1853976A003E4610 /* UCFAchievementsViewController.xib */,
+			);
+			path = Achievements;
+			sourceTree = "<group>";
+		};
+		B86800E01853986C003E4610 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				B86800E118539878003E4610 /* UCFSettingsViewController.h */,
+				B86800E218539878003E4610 /* UCFSettingsViewController.m */,
+				B86800E318539878003E4610 /* UCFSettingsViewController.xib */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		B876F5AA1852C2B600ED630A = {
@@ -171,6 +206,8 @@
 		B876F5BC1852C2B600ED630A /* chimehack */ = {
 			isa = PBXGroup;
 			children = (
+				B86800E01853986C003E4610 /* Settings */,
+				B86800DA18539754003E4610 /* Achievements */,
 				B85F53EE1852ED3F0017CB23 /* Donate */,
 				B85F53E81852ECB10017CB23 /* Signup */,
 				B85F53D21852C4150017CB23 /* Common */,
@@ -292,9 +329,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B86800E518539878003E4610 /* UCFSettingsViewController.xib in Resources */,
 				B85F53F31852EDAC0017CB23 /* UCFDonateViewController.xib in Resources */,
 				B85F53F51852EF2F0017CB23 /* UCFDonateViewController.xcassets in Resources */,
 				B876F5CF1852C2B600ED630A /* Images.xcassets in Resources */,
+				B86800DF1853976A003E4610 /* UCFAchievementsViewController.xib in Resources */,
 				B876F5C11852C2B600ED630A /* InfoPlist.strings in Resources */,
 				B85F53ED1852ECB10017CB23 /* UCFSignupViewController.xcassets in Resources */,
 			);
@@ -350,9 +389,12 @@
 			files = (
 				B85F53F21852EDAC0017CB23 /* UCFDonateViewController.m in Sources */,
 				B85F53E21852D5C90017CB23 /* UCFSettings.m in Sources */,
+				B86800DE1853976A003E4610 /* UCFAchievementsViewController.m in Sources */,
 				B876F5C31852C2B600ED630A /* main.m in Sources */,
+				B86800E818539CA0003E4610 /* NSAttributedString+UCFAdditions.m in Sources */,
 				B876F5C71852C2B600ED630A /* UCFAppDelegate.m in Sources */,
 				B85F53EC1852ECB10017CB23 /* UCFSignupViewController.m in Sources */,
+				B86800E418539878003E4610 /* UCFSettingsViewController.m in Sources */,
 				B85F53E51852D7BB0017CB23 /* UIKit+UCFAdditions.m in Sources */,
 				B85F53D51852C4370017CB23 /* UCFNavigationController.m in Sources */,
 				B85F53F91852F6080017CB23 /* UCFMainTabController.m in Sources */,
