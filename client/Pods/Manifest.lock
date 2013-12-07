@@ -1,0 +1,10 @@
+PODS:
+  - MNColorKit (HEAD based on 1.0.2)
+
+DEPENDENCIES:
+  - MNColorKit (HEAD)
+
+SPEC CHECKSUMS:
+  MNColorKit: 61380ff9c94430be602684a3dfb18c18dec7bb78
+
+COCOAPODS: 0.28.0

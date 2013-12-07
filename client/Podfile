@@ -1,0 +1,6 @@
+platform :ios, '7.0'
+xcodeproj 'chimehack.xcodeproj'
+workspace 'chimehack.xcworkspace'
+
+# Opensource Approved
+pod 'MNColorKit', :head
