@@ -8,6 +8,8 @@
 
 #import "UCFDonateViewController.h"
 
+#import "UCFSendEmailViewController.h"
+
 @interface UCFDonateViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *headerLabel;
 @property (strong, nonatomic) IBOutlet UILabel *nameLabel;
@@ -55,7 +57,10 @@
 }
 
 
-- (IBAction)didTapEmailButton:(id)sender {
+- (IBAction)didTapEmailButton:(id)sender
+{
+    UCFSendEmailViewController *controller = [[UCFSendEmailViewController alloc] init];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 @end

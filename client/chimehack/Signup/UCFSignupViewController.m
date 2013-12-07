@@ -8,14 +8,16 @@
 
 #import "UCFSignupViewController.h"
 
+#import "UCFUnderlinedTextField.h"
+
 @interface UCFSignupViewController () <UITextFieldDelegate>
 
 @end
 
 @implementation UCFSignupViewController
 {
-    UITextField *_nameTextField;
-    UITextField *_emailTextField;
+    UCFUnderlinedTextField *_nameTextField;
+    UCFUnderlinedTextField *_emailTextField;
     UIView *_containerView;
 }
 
@@ -26,8 +28,7 @@
     
     self.title = NSLocalizedString(@"Create Account", nil);
     self.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Join", nil) style:UIBarButtonItemStylePlain target:self action:@selector(_didTapJoinButton:)];
-    self.navigationItem.rightBarButtonItem.tintColor = [UIColor whiteColor];
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem ucf_barButtonItemWithTitle:NSLocalizedString(@"Join", nil) target:self action:@selector(_didTapJoinButton:)];
 
     return self;
 }
@@ -77,39 +78,23 @@
                                                               @"centerX == ": als_superview,
                                                              }];
     
-    NSDictionary *attributes = @{ NSFontAttributeName: [UIFont ucf_fontWithSize:20],
-                                  NSForegroundColorAttributeName: [UIColor blackColor]};
-    _nameTextField = [[UITextField alloc] initWithFrame:CGRectZero];
-    _nameTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:NSLocalizedString(@"Child's Name", nil) attributes:attributes];
+    _nameTextField = [[UCFUnderlinedTextField alloc] initWithFrame:CGRectZero];
+    [_nameTextField setPlaceholderText:NSLocalizedString(@"Child's Name", nil)];
+    _nameTextField.textField.delegate = self;
     
-    _nameTextField.textColor = [UIColor blackColor];
-    _nameTextField.font = [UIFont ucf_fontWithSize:20];
-    _nameTextField.delegate = self;
     [_containerView ucf_addSubview:_nameTextField withConstraints:@{ @"top == ": @{als_view: cameraButton.als_bottom, als_constant: @30},
-                                                                @"width == ": @{als_view:als_superview, als_constant: @(-40)},
-                                                                @"centerX ==": als_superview,
+                                                                     @"width == ": @{als_view:als_superview, als_constant: @(-40)},
+                                                                     @"centerX ==": als_superview,
                                                                }];
-    [_containerView ucf_addSubview:[self _mkSeparatorView] withConstraints:@{ @"width == ": _nameTextField.als_width,
-                                                                         @"height ==": @1,
-                                                                         @"centerX ==": als_superview,
-                                                                         @"top ==": @{als_view: _nameTextField.als_bottom, als_constant: @10},
-                                                                         }];
     
-    _emailTextField = [[UITextField alloc] initWithFrame:CGRectZero];
-    _emailTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:NSLocalizedString(@"Parent's Email", nil) attributes:attributes];
-    _emailTextField.textColor = _nameTextField.textColor;
-    _emailTextField.font = _nameTextField.font;
-    _emailTextField.delegate = self;
+    _emailTextField = [[UCFUnderlinedTextField alloc] initWithFrame:CGRectZero];
+    [_emailTextField setPlaceholderText:NSLocalizedString(@"Parent's Email", nil)];
+    _emailTextField.textField.delegate = self;
 
     [_containerView ucf_addSubview:_emailTextField withConstraints:@{ @"top == ": @{als_view: _nameTextField.als_bottom, als_constant: @30},
-                                                                @"width == ": @{als_view:als_superview, als_constant: @(-40)},
-                                                                @"centerX ==": als_superview,
+                                                                      @"width == ": @{als_view:als_superview, als_constant: @(-40)},
+                                                                      @"centerX ==": als_superview,
                                                                 }];
-    [_containerView ucf_addSubview:[self _mkSeparatorView] withConstraints:@{ @"width == ": _nameTextField.als_width,
-                                                                         @"height ==": @1,
-                                                                         @"centerX ==": als_superview,
-                                                                         @"top == ": @{als_view: _emailTextField.als_bottom, als_constant: @10},
-                                                                         }];
 }
 
 - (void)viewDidAppear:(BOOL)animated
