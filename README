@@ -2,7 +2,19 @@ chimehack project for the unicef trick or treat project.
 
 structure
 - server: the rails server component
-  - requires ruby 1.9 and rails 4
+  - requires ruby 1.9+ and rails 4
+    - rvm install 1.9
+    - rvm gemset create chimehack
+    - rvm use 1.9@chimehack --create
+    - gem install bundler
+    - bundle
+  - install mysql 5.5+ (http://dev.mysql.com/downloads/mysql/5.5.html)
+    - make sure username is root
+    - make sure password is blank
+  - rake db:create
+  - rake db:mirate
+  - start server
+  	- rails server
 - client: the mobile application
 
 web and iphone flows (Phase 1): https://drive.google.com/#folders/0B7yysWiQbKCkUUNqc3QxYWUyN2c
