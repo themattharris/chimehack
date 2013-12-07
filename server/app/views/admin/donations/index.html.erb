@@ -1,5 +1,7 @@
 <table>
   <tr>
+    <th>Donor</th>
+    <th>Referrer</th>
     <th>Currency</th>
     <th>Value</th>
     <th colspan="2"></th>
@@ -7,6 +9,8 @@
 
 <% @donations.each do |donation| %>
   <tr>
+    <td><%= donation.donor.name %></td>
+    <td><%= donation.referrer.name %></td>
     <td><%= donation.currency %></td>
     <td><%= donation.value %></td>
     <td><%= link_to 'Show', admin_donation_path(donation) %></td>
