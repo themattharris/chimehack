@@ -115,6 +115,7 @@ Licensed under The MIT License (MIT).
 ```json
 {
   "total_value": 15.0,
+  "unique_donors": 1,
   "count": 1,
   "donations": [
     {
@@ -152,6 +153,7 @@ Licensed under The MIT License (MIT).
 {
   "total_value": 15.0,
   "count": 2,
+  "unique_donors": 2,
   "donations": [
     {
       "currency": "USD",

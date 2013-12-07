@@ -26,12 +26,17 @@ class Api::DonationsController < ApiController
   private
   def render_donations
     total = 0
-    @donations.each { |d| total += d[:value].to_f }
+    donors = []
+    @donations.each do |d|
+      total += d[:value].to_f
+      donors << d[:donor_id]
+    end
 
     respond_to do |format|
       format.json { render :json => {
         :total_value => total,
         :count => @donations.size,
+        :unique_donors => donors.uniq.size,
         :donations => @donations
       }}
     end
