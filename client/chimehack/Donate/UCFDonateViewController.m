@@ -9,6 +9,7 @@
 #import "UCFDonateViewController.h"
 
 #import "UCFSendEmailViewController.h"
+#import "UCFCreditCardViewController.h"
 
 @interface UCFDonateViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *headerLabel;
@@ -53,7 +54,10 @@
 }
 
 
-- (IBAction)didTapDonateButton:(id)sender {
+- (IBAction)didTapDonateButton:(id)sender
+{
+    UCFCreditCardViewController *controller = [[UCFCreditCardViewController alloc] init];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 
