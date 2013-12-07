@@ -49,9 +49,8 @@
     [self.valueSlider setThumbImage:thumbImage forState:UIControlStateHighlighted];
     
     NSString *userName = [[UCFSettings sharedInstace] signedInUserName];
-    NSString *nameString = [NSString stringWithFormat:NSLocalizedString(@"%@ raised", nil), userName];
-    _nameLabel.text = nameString;
-    
+    [self _updateNameLabelWith:userName];
+
     [self _reloadViewData];
 }
 
@@ -70,18 +69,28 @@
     __weak typeof(self) weakSelf = self;
     [[UCFService sharedInstance] fetchDonationsByReferer:referrerId completion:^(id result, NSError *error) {
         weakSelf.navigationItem.rightBarButtonItem.enabled = YES;
-        [weakSelf updateViewWithData:result];
+        [weakSelf _updateViewWithData:result];
     }];
 }
 
-- (void)updateViewWithData:(NSDictionary *)data
+- (void)_updateNameLabelWith:(NSString *)name
+{
+    NSString *nameString = [NSString stringWithFormat:NSLocalizedString(@"%@ raised", nil), name];
+    _nameLabel.text = nameString;
+}
+
+- (void)_updateViewWithData:(NSDictionary *)data
 {
     NSNumber *totalValue = data[@"total_value"] ?: @0;
     
-    NSString *achievedText = NSLocalizedString(@"$%@ of their $500 goal", nil);
-    achievedText = [NSString stringWithFormat:achievedText, totalValue];
+    NSDictionary *firstDonation = [[data valueForKeyPath:@"donations"] firstObject];
     
-    _achievedLabel.text = achievedText;
+    NSNumber *challengeTarget = [firstDonation valueForKeyPath:@"challenge.target"];
+    NSAttributedString *achievedText = [NSAttributedString ucf_challengeProgressStringForAmount:totalValue target:challengeTarget];
+    _achievedLabel.attributedText = achievedText;
+    
+    NSString *userName = [firstDonation valueForKeyPath:@"referrer.name"];
+    [self _updateNameLabelWith:userName];
 }
 
 - (void)_didTapReloadButton:(id)sender

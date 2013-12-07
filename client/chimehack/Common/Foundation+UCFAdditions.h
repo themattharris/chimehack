@@ -17,5 +17,6 @@
 @interface NSAttributedString (UCFAdditions)
 
 + (NSAttributedString *)ucf_trickOrTreatString;
++ (NSAttributedString *)ucf_challengeProgressStringForAmount:(NSNumber *)amount target:(NSNumber *)target;
 
 @end
