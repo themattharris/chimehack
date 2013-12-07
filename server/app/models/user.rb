@@ -32,7 +32,7 @@ class User < ActiveRecord::Base
   validate :phone_or_email_set
 
   def total_donations
-    (donations.inject(0.0) {|sum, d| d.value + sum }).floor
+    donations.inject(0.0) {|sum, d| d.value + sum }
   end
 
   def has_contact_info?

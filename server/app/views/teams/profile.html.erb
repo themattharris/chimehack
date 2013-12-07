@@ -2,8 +2,10 @@
   <%= image_tag "social-btns.jpg" -%>
   <div class="circle pad_photo"></div>
   <h5><%= @user.name -%>'s raised <br /><strong>
-      $<%= @user.total_donations -%>
-  </strong> of the <strong>$500</strong> goal</h5>
+      $<%= @user.total_donations.floor -%>
+    </strong> of the <strong>
+      $<%= @challenge.target.floor -%>
+  </strong> goal</h5>
 </div>
 
 <table class="table table-hover leaderboard">
@@ -50,7 +52,7 @@
     </tr>
     <tr>
       <td class='align-left'><%= @user.name -%></td>
-      <td class='align-right'>$<%= @user.total_donations -%></td>
+      <td class='align-right'>$<%= @user.total_donations.floor -%></td>
     </tr>
     </tbody>
   </table>
