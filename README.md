@@ -116,7 +116,7 @@ project for the unicef trick or treat project.
   "donations": [
     {
       "currency": "USD",
-      "value": "15.0",
+      "value": 15.0,
       "donor": {
         "id": 2,
         "name": "themattharris"
@@ -127,8 +127,8 @@ project for the unicef trick or treat project.
       },
       "challenge": {
         "name": "chimehack",
-        "target": "500.0",
-        "current": "200.0"
+        "target": 500.0,
+        "current": 200.0
       }
     }
   ]
@@ -152,7 +152,7 @@ project for the unicef trick or treat project.
   "donations": [
     {
       "currency": "USD",
-      "value": "50.0",
+      "value": 50.0,
       "donor": {
         "id": 8,
         "name": "greentea"
@@ -163,13 +163,13 @@ project for the unicef trick or treat project.
       },
       "challenge": {
         "name": "chimehack",
-        "target": "500.0",
-        "current": "200.0"
+        "target": 500.0,
+        "current": 200.0
       }
     },
     {
       "currency": "USD",
-      "value": "25.0",
+      "value": 25.0,
       "donor": {
         "id": 9,
         "name": "coffeeandtv"
@@ -180,8 +180,8 @@ project for the unicef trick or treat project.
       },
       "challenge": {
         "name": "chimehack",
-        "target": "500.0",
-        "current": "200.0"
+        "target": 500.0,
+        "current": 200.0
       }
     }
   ]
@@ -236,7 +236,7 @@ project for the unicef trick or treat project.
 ```
 
 
-#### Donations by referrer
+#### An Incentive
 * **method**: GET
 * **path**: /api/incentive.json
 * **params**:
@@ -247,44 +247,8 @@ project for the unicef trick or treat project.
 
 ```json
 {
-  "total_value": 15.0,
-  "count": 2,
-  "donations": [
-    {
-      "currency": "USD",
-      "value": "50.0",
-      "donor": {
-        "id": 8,
-        "name": "greentea"
-      },
-      "referrer": {
-        "id": 1,
-        "name": "allison l"
-      },
-      "challenge": {
-        "name": "chimehack",
-        "target": "500.0",
-        "current": "200.0"
-      }
-    },
-    {
-      "currency": "USD",
-      "value": "25.0",
-      "donor": {
-        "id": 9,
-        "name": "coffeeandtv"
-      },
-      "referrer": {
-        "id": 1,
-        "name": "allison l"
-      },
-      "challenge": {
-        "name": "chimehack",
-        "target": "500.0",
-        "current": "200.0"
-      }
-    }
-  ]
+  "value": 500,
+  "description": "A pump that provides clean water to a village or school."
 }
 ```
 
