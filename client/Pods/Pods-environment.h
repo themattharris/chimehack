@@ -66,3 +66,9 @@
 #define COCOAPODS_VERSION_MINOR_UIAlertView_Blocks 7
 #define COCOAPODS_VERSION_PATCH_UIAlertView_Blocks 0
 
+// UIResponder+MNActions
+#define COCOAPODS_POD_AVAILABLE_UIResponder_MNActions
+#define COCOAPODS_VERSION_MAJOR_UIResponder_MNActions 1
+#define COCOAPODS_VERSION_MINOR_UIResponder_MNActions 0
+#define COCOAPODS_VERSION_PATCH_UIResponder_MNActions 0
+

@@ -65,24 +65,32 @@ project for the unicef trick or treat project.
 * **response**:
 `{
   "id": 6,
-  "name": "bob",
+  "name": "bob"
 }`
 
-#### Donate (in development)
+#### Donate
 * **method**: POST
 * **path**: /api/donate.json
 * **params**
   * `donor_id`: integer : required : the id of the person gifting money
   * `referrer_id`: integer : required :  the id of the person collecting money
-  * `currency`: string : optional : the currency of the money gift (defaults to USD)
-  * ....
+  * `value`: double : required : the value to donate (>=1 or <=100000000)
 * **response**:
 `{
   "id": 6,
-  "name": "bob",
+  "currency": "USD",
+  "value": "10.0",
+  "donor": {
+    "id": 1,
+    "name": "themattharris"
+  },
+  "referrer": {
+    "id": 2,
+    "name": "cindyli"
+  }
 }`
 
-#### Donations by donor (in development)
+#### Donations by donor
 * **method**: GET
 * **path**: /api/donations/for_donor.json
 * **params**:
@@ -91,12 +99,38 @@ project for the unicef trick or treat project.
   * `/api/donations/for_donor.json?id=2`
 * **response**:
 `{
-  "id": 6,
-  "name": "bob",
+  "total_value": 15.0,
+  "count": 2,
+  "donations": [
+    {
+      "currency": "USD",
+      "value": "5.0",
+      "donor": {
+        "id": 1,
+        "name": "themattharris"
+      },
+      "referrer": {
+        "id": 2,
+        "name": "cindyli"
+      }
+    },
+    {
+      "currency": "USD",
+      "value": "10.0",
+      "donor": {
+        "id": 1,
+        "name": "themattharris"
+      },
+      "referrer": {
+        "id": 2,
+        "name": "cindyli"
+      }
+    }
+  ]
 }`
 
 
-#### Donations by referrer (in development)
+#### Donations by referrer
 * **method**: GET
 * **path**: /api/donations/for_referrer.json
 * **params**:
@@ -105,6 +139,32 @@ project for the unicef trick or treat project.
   * `/api/donations/for_referrer.json?id=2`
 * **response**:
 `{
-  "id": 6,
-  "name": "bob",
+  "total_value": 15.0,
+  "count": 2,
+  "donations": [
+    {
+      "currency": "USD",
+      "value": "5.0",
+      "donor": {
+        "id": 1,
+        "name": "themattharris"
+      },
+      "referrer": {
+        "id": 2,
+        "name": "cindyli"
+      }
+    },
+    {
+      "currency": "USD",
+      "value": "10.0",
+      "donor": {
+        "id": 1,
+        "name": "themattharris"
+      },
+      "referrer": {
+        "id": 2,
+        "name": "cindyli"
+      }
+    }
+  ]
 }`

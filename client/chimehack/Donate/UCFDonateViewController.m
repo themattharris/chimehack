@@ -11,6 +11,9 @@
 #import "UCFSendEmailViewController.h"
 #import "UCFCreditCardViewController.h"
 
+#import "UCFSettings.h"
+#import "UCFService.h"
+
 @interface UCFDonateViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *headerLabel;
 @property (strong, nonatomic) IBOutlet UILabel *nameLabel;
@@ -30,6 +33,8 @@
     self.title = NSLocalizedString(@"Donate", nil);
     self.tabBarItem = [UITabBarItem ucf_tabBarItemWithBaseName:@"tabbar-unicef" title:self.title];
 
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(_didTapReloadButton:)];
+
     return self;
 }
 
@@ -42,12 +47,46 @@
     UIImage *thumbImage = [UIImage imageNamed:@"btn-drag-circle"];
     [self.valueSlider setThumbImage:thumbImage forState:UIControlStateNormal];
     [self.valueSlider setThumbImage:thumbImage forState:UIControlStateHighlighted];
+    
+    NSString *userName = [[UCFSettings sharedInstace] signedInUserName];
+    NSString *nameString = [NSString stringWithFormat:NSLocalizedString(@"%@ raised", nil), userName];
+    _nameLabel.text = nameString;
+    
+    [self _reloadViewData];
 }
 
-- (void)didReceiveMemoryWarning
+- (void)viewDidAppear:(BOOL)animated
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [super viewDidAppear:animated];
+
+}
+
+- (void)_reloadViewData
+{
+    id referrerId = [[UCFSettings sharedInstace] signedInUserId];
+    
+    self.navigationItem.rightBarButtonItem.enabled = NO;
+    
+    __weak typeof(self) weakSelf = self;
+    [[UCFService sharedInstance] fetchDonationsByReferer:referrerId completion:^(id result, NSError *error) {
+        weakSelf.navigationItem.rightBarButtonItem.enabled = YES;
+        [weakSelf updateViewWithData:result];
+    }];
+}
+
+- (void)updateViewWithData:(NSDictionary *)data
+{
+    NSNumber *totalValue = data[@"total_value"] ?: @0;
+    
+    NSString *achievedText = NSLocalizedString(@"$%@ of their $500 goal", nil);
+    achievedText = [NSString stringWithFormat:achievedText, totalValue];
+    
+    _achievedLabel.text = achievedText;
+}
+
+- (void)_didTapReloadButton:(id)sender
+{
+    [self _reloadViewData];
 }
 
 - (IBAction)didChangeSliderValue:(id)sender {

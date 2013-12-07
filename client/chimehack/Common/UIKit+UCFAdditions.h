@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <AutoLayoutShorthand/AutoLayoutShorthand.h>
+#import <UIResponder+MNActions/UIResponder+MNActions.h>
+
 #import "UCFUnderlinedTextField.h"
 
 @interface UIView (UCFAdditions)

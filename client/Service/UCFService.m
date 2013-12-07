@@ -31,7 +31,7 @@
     self = [super init];
     if (!self) return nil;
     
-    NSURL *baseURL = [NSURL URLWithString: @"http://chimehack.tokofu.net"];
+    NSURL *baseURL = [NSURL URLWithString: @"http://chimehack.tokofu.net/api"];
     _httpManager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:baseURL];
     
     return self;
@@ -48,7 +48,7 @@
 
 - (void)_performGet:(NSString *)path paramters:(NSDictionary *)parameters completion:(UCFServiceCompletionBlock)completion
 {
-    [[AFHTTPRequestOperationManager manager] GET:path parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [_httpManager GET:path parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         if (completion) completion(responseObject, nil);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         if (completion) completion(nil, error);
@@ -61,15 +61,26 @@
                                  @"name": name,
                                  @"email": email
                                  };
-    [self _performPost:@"api/user.json" paramters:parameters completion:^(id result, NSError *error) {
+    [self _performPost:@"user.json" paramters:parameters completion:^(id result, NSError *error) {
         if (result) {
             NSString *userId = result[@"id"];
+            NSString *userName = result[@"name"];
+            
             if (userId) {
                 [[UCFSettings sharedInstace] setSignedInUserId:userId];
+            }
+            if (userName) {
+                [[UCFSettings sharedInstace] setSignedInUserName:userName];
             }
         }
         if (completion) completion(result, error);
     }];
+}
+
+- (void)fetchDonationsByReferer:(id)referredId completion:(UCFServiceCompletionBlock)completion
+{
+    NSDictionary *parameters = @{@"referrer_id": referredId};
+    [self _performGet:@"donations/for_referrer.json" paramters:parameters completion:completion];
 }
 
 
