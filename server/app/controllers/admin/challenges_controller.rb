@@ -1,4 +1,4 @@
-class ChallengesController < ApplicationController
+class Admin::ChallengesController < ApplicationController
   def new
     @challenge = Challenge.new
   end
@@ -7,7 +7,7 @@ class ChallengesController < ApplicationController
     @challenge = Challenge.new(challenge_params)
 
     if @challenge.save
-      redirect_to challenges_path
+      redirect_to admin_challenges_path
     else
       render 'new'
     end
@@ -21,7 +21,7 @@ class ChallengesController < ApplicationController
     @challenge = Challenge.find(params[:id])
 
     if @challenge.update(challenge_params)
-      redirect_to challenges_path
+      redirect_to admin_challenges_path
     else
       render 'edit'
     end

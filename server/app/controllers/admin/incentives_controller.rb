@@ -1,9 +1,9 @@
-class IncentivesController < ApplicationController
+class Admin::IncentivesController < ApplicationController
   before_filter :find_contextual_incentive, :except => [:index]
 
   def create
     if @incentive.save
-      redirect_to incentives_path
+      redirect_to admin_incentives_path
     else
       render 'new'
     end
@@ -24,7 +24,7 @@ class IncentivesController < ApplicationController
 
   def update
     if @incentive.update(incentive_params)
-      redirect_to incentives_path
+      redirect_to admin_incentives_path
     else
       render 'edit'
     end

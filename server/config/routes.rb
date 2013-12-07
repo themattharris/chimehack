@@ -15,7 +15,7 @@ Server::Application.routes.draw do
   get 'team/:id' => 'teams#profile'
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
-  scope '/admin' do
+  namespace :admin do
     resources :challenges
     resources :donations
     resources :incentives

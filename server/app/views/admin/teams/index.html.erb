@@ -1,0 +1,16 @@
+<table>
+  <tr>
+    <th>Name</th>
+    <th colspan="2"></th>
+  </tr>
+
+<% @teams.each do |team| %>
+  <tr>
+    <td><%= team.name %></td>
+    <td><%= link_to 'Show', admin_team_path(team) %></td>
+    <td><%= link_to 'Edit', edit_admin_team_path(team) %></td>
+  </tr>
+<% end %>
+</table>
+
+<p><%= link_to 'New', new_admin_team_path %> | <%= link_to 'Admin', admin_path %></p>

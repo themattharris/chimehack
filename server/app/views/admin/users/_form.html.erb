@@ -1,4 +1,4 @@
-<%= form_for @user do |f| %>
+<%= form_for [:admin, @user] do |f| %>
   <% if @user.errors.any? %>
   <div id="error_explanation">
     <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
@@ -34,4 +34,4 @@
   </p>
 <% end %>
 
-<p><%= link_to 'Back', users_path %> | <%= link_to 'Admin', admin_path %></p>
+<p><%= link_to 'Back', admin_users_path %> | <%= link_to 'Admin', admin_path %></p>

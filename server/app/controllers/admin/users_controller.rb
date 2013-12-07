@@ -1,10 +1,10 @@
-class UsersController < ApplicationController
+class Admin::UsersController < ApplicationController
   before_filter :find_contextual_user, :except => [:index]
   before_filter :find_teams, :except => [:index]
 
   def create
     if @user.save
-      redirect_to users_path
+      redirect_to admin_users_path
     else
       render 'new'
     end
@@ -25,7 +25,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      redirect_to users_path
+      redirect_to admin_users_path
     else
       render 'edit'
     end

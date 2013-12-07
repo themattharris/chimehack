@@ -1,4 +1,4 @@
-<%= form_for @incentive do |f| %>
+<%= form_for [:admin, @incentive] do |f| %>
   <% if @incentive.errors.any? %>
   <div id="error_explanation">
     <h2><%= pluralize(@incentive.errors.count, "error") %> prohibited this incentive from being saved:</h2>
@@ -24,4 +24,4 @@
   </p>
 <% end %>
 
-<p><%= link_to 'Back', incentives_path %> | <%= link_to 'Admin', admin_path %></p>
+<p><%= link_to 'Back', admin_incentives_path %> | <%= link_to 'Admin', admin_path %></p>

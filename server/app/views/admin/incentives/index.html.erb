@@ -9,10 +9,10 @@
   <tr>
     <td><%= incentive.value %></td>
     <td><%= incentive.description %></td>
-    <td><%= link_to 'Show', incentive_path(incentive) %></td>
-    <td><%= link_to 'Edit', edit_incentive_path(incentive) %></td>
+    <td><%= link_to 'Show', admin_incentive_path(incentive) %></td>
+    <td><%= link_to 'Edit', edit_admin_incentive_path(incentive) %></td>
   </tr>
 <% end %>
 </table>
 
-<p><%= link_to 'New', new_incentive_path %> | <%= link_to 'Admin', admin_path %></p>
+<p><%= link_to 'New', new_admin_incentive_path %> | <%= link_to 'Admin', admin_path %></p>
