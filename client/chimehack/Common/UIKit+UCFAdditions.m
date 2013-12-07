@@ -68,3 +68,14 @@
 }
 
 @end
+
+@implementation UITabBarItem (UCFAdditions)
+
++ (UITabBarItem *)ucf_tabBarItemWithBaseName:(NSString *)baseName title:(NSString *)title
+{
+    UIImage *offImage = [UIImage imageNamed:[baseName stringByAppendingString:@"-off"]];
+    UIImage *onImage = [UIImage imageNamed:[baseName stringByAppendingString:@"-on"]];
+    return [[UITabBarItem alloc] initWithTitle:title image:offImage selectedImage:onImage];
+}
+
+@end

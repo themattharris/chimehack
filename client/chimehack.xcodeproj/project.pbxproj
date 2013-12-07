@@ -13,6 +13,10 @@
 		B85F53E51852D7BB0017CB23 /* UIKit+UCFAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B85F53E41852D7BB0017CB23 /* UIKit+UCFAdditions.m */; };
 		B85F53EC1852ECB10017CB23 /* UCFSignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B85F53EA1852ECB10017CB23 /* UCFSignupViewController.m */; };
 		B85F53ED1852ECB10017CB23 /* UCFSignupViewController.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B85F53EB1852ECB10017CB23 /* UCFSignupViewController.xcassets */; };
+		B85F53F21852EDAC0017CB23 /* UCFDonateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B85F53F01852EDAC0017CB23 /* UCFDonateViewController.m */; };
+		B85F53F31852EDAC0017CB23 /* UCFDonateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B85F53F11852EDAC0017CB23 /* UCFDonateViewController.xib */; };
+		B85F53F51852EF2F0017CB23 /* UCFDonateViewController.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B85F53F41852EF2F0017CB23 /* UCFDonateViewController.xcassets */; };
+		B85F53F91852F6080017CB23 /* UCFMainTabController.m in Sources */ = {isa = PBXBuildFile; fileRef = B85F53F71852F6080017CB23 /* UCFMainTabController.m */; };
 		B876F5B71852C2B600ED630A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B876F5B61852C2B600ED630A /* Foundation.framework */; };
 		B876F5B91852C2B600ED630A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B876F5B81852C2B600ED630A /* CoreGraphics.framework */; };
 		B876F5BB1852C2B600ED630A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B876F5BA1852C2B600ED630A /* UIKit.framework */; };
@@ -48,6 +52,12 @@
 		B85F53E91852ECB10017CB23 /* UCFSignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UCFSignupViewController.h; sourceTree = "<group>"; };
 		B85F53EA1852ECB10017CB23 /* UCFSignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UCFSignupViewController.m; sourceTree = "<group>"; };
 		B85F53EB1852ECB10017CB23 /* UCFSignupViewController.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = UCFSignupViewController.xcassets; sourceTree = "<group>"; };
+		B85F53EF1852EDAC0017CB23 /* UCFDonateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UCFDonateViewController.h; sourceTree = "<group>"; };
+		B85F53F01852EDAC0017CB23 /* UCFDonateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UCFDonateViewController.m; sourceTree = "<group>"; };
+		B85F53F11852EDAC0017CB23 /* UCFDonateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UCFDonateViewController.xib; sourceTree = "<group>"; };
+		B85F53F41852EF2F0017CB23 /* UCFDonateViewController.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = UCFDonateViewController.xcassets; sourceTree = "<group>"; };
+		B85F53F61852F6080017CB23 /* UCFMainTabController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UCFMainTabController.h; sourceTree = "<group>"; };
+		B85F53F71852F6080017CB23 /* UCFMainTabController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UCFMainTabController.m; sourceTree = "<group>"; };
 		B876F5B31852C2B600ED630A /* chimehack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chimehack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B876F5B61852C2B600ED630A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B876F5B81852C2B600ED630A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -115,6 +125,17 @@
 			path = Signup;
 			sourceTree = "<group>";
 		};
+		B85F53EE1852ED3F0017CB23 /* Donate */ = {
+			isa = PBXGroup;
+			children = (
+				B85F53EF1852EDAC0017CB23 /* UCFDonateViewController.h */,
+				B85F53F01852EDAC0017CB23 /* UCFDonateViewController.m */,
+				B85F53F11852EDAC0017CB23 /* UCFDonateViewController.xib */,
+				B85F53F41852EF2F0017CB23 /* UCFDonateViewController.xcassets */,
+			);
+			path = Donate;
+			sourceTree = "<group>";
+		};
 		B876F5AA1852C2B600ED630A = {
 			isa = PBXGroup;
 			children = (
@@ -150,10 +171,13 @@
 		B876F5BC1852C2B600ED630A /* chimehack */ = {
 			isa = PBXGroup;
 			children = (
+				B85F53EE1852ED3F0017CB23 /* Donate */,
 				B85F53E81852ECB10017CB23 /* Signup */,
 				B85F53D21852C4150017CB23 /* Common */,
 				B876F5C51852C2B600ED630A /* UCFAppDelegate.h */,
 				B876F5C61852C2B600ED630A /* UCFAppDelegate.m */,
+				B85F53F61852F6080017CB23 /* UCFMainTabController.h */,
+				B85F53F71852F6080017CB23 /* UCFMainTabController.m */,
 				B876F5CE1852C2B600ED630A /* Images.xcassets */,
 				B876F5BD1852C2B600ED630A /* Supporting Files */,
 			);
@@ -268,6 +292,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B85F53F31852EDAC0017CB23 /* UCFDonateViewController.xib in Resources */,
+				B85F53F51852EF2F0017CB23 /* UCFDonateViewController.xcassets in Resources */,
 				B876F5CF1852C2B600ED630A /* Images.xcassets in Resources */,
 				B876F5C11852C2B600ED630A /* InfoPlist.strings in Resources */,
 				B85F53ED1852ECB10017CB23 /* UCFSignupViewController.xcassets in Resources */,
@@ -322,12 +348,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B85F53F21852EDAC0017CB23 /* UCFDonateViewController.m in Sources */,
 				B85F53E21852D5C90017CB23 /* UCFSettings.m in Sources */,
 				B876F5C31852C2B600ED630A /* main.m in Sources */,
 				B876F5C71852C2B600ED630A /* UCFAppDelegate.m in Sources */,
 				B85F53EC1852ECB10017CB23 /* UCFSignupViewController.m in Sources */,
 				B85F53E51852D7BB0017CB23 /* UIKit+UCFAdditions.m in Sources */,
 				B85F53D51852C4370017CB23 /* UCFNavigationController.m in Sources */,
+				B85F53F91852F6080017CB23 /* UCFMainTabController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

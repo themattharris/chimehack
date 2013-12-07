@@ -34,3 +34,9 @@
 - (CGRect)ucf_frameForView:(UIView *)view givenKeyboardFrame:(CGRect)keyboardFrame;
 
 @end
+
+@interface UITabBarItem (UCFAdditions)
+
++ (UITabBarItem *)ucf_tabBarItemWithBaseName:(NSString *)baseName title:(NSString *)title;
+
+@end
