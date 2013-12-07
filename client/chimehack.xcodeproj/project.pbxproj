@@ -28,6 +28,10 @@
 		B86800F41853AE63003E4610 /* UCFService.m in Sources */ = {isa = PBXBuildFile; fileRef = B86800F31853AE63003E4610 /* UCFService.m */; };
 		B86800F81853BA54003E4610 /* UCFCreditCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B86800F61853BA54003E4610 /* UCFCreditCardViewController.m */; };
 		B86800F91853BA54003E4610 /* UCFCreditCardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B86800F71853BA54003E4610 /* UCFCreditCardViewController.xib */; };
+		B86800FF1853D4B6003E4610 /* UCFAchievementButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B86800FE1853D4B6003E4610 /* UCFAchievementButton.m */; };
+		B86801031853D89C003E4610 /* UCFAchievementsController.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B86801021853D89C003E4610 /* UCFAchievementsController.xcassets */; };
+		B86801071853DE7E003E4610 /* UCFBadgesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B86801051853DE7E003E4610 /* UCFBadgesViewController.m */; };
+		B86801081853DE7E003E4610 /* UCFBadgesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B86801061853DE7E003E4610 /* UCFBadgesViewController.xib */; };
 		B876F5B71852C2B600ED630A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B876F5B61852C2B600ED630A /* Foundation.framework */; };
 		B876F5B91852C2B600ED630A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B876F5B81852C2B600ED630A /* CoreGraphics.framework */; };
 		B876F5BB1852C2B600ED630A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B876F5BA1852C2B600ED630A /* UIKit.framework */; };
@@ -87,7 +91,13 @@
 		B86800F51853BA54003E4610 /* UCFCreditCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UCFCreditCardViewController.h; sourceTree = "<group>"; };
 		B86800F61853BA54003E4610 /* UCFCreditCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UCFCreditCardViewController.m; sourceTree = "<group>"; };
 		B86800F71853BA54003E4610 /* UCFCreditCardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UCFCreditCardViewController.xib; sourceTree = "<group>"; };
-		B876F5B31852C2B600ED630A /* chimehack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chimehack.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B86800FD1853D4B6003E4610 /* UCFAchievementButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UCFAchievementButton.h; sourceTree = "<group>"; };
+		B86800FE1853D4B6003E4610 /* UCFAchievementButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UCFAchievementButton.m; sourceTree = "<group>"; };
+		B86801021853D89C003E4610 /* UCFAchievementsController.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = UCFAchievementsController.xcassets; sourceTree = "<group>"; };
+		B86801041853DE7E003E4610 /* UCFBadgesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UCFBadgesViewController.h; sourceTree = "<group>"; };
+		B86801051853DE7E003E4610 /* UCFBadgesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UCFBadgesViewController.m; sourceTree = "<group>"; };
+		B86801061853DE7E003E4610 /* UCFBadgesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UCFBadgesViewController.xib; sourceTree = "<group>"; };
+		B876F5B31852C2B600ED630A /* TOT4UNICEF.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TOT4UNICEF.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B876F5B61852C2B600ED630A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B876F5B81852C2B600ED630A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		B876F5BA1852C2B600ED630A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -181,6 +191,12 @@
 				B86800DB1853976A003E4610 /* UCFAchievementsViewController.h */,
 				B86800DC1853976A003E4610 /* UCFAchievementsViewController.m */,
 				B86800DD1853976A003E4610 /* UCFAchievementsViewController.xib */,
+				B86800FD1853D4B6003E4610 /* UCFAchievementButton.h */,
+				B86800FE1853D4B6003E4610 /* UCFAchievementButton.m */,
+				B86801021853D89C003E4610 /* UCFAchievementsController.xcassets */,
+				B86801041853DE7E003E4610 /* UCFBadgesViewController.h */,
+				B86801051853DE7E003E4610 /* UCFBadgesViewController.m */,
+				B86801061853DE7E003E4610 /* UCFBadgesViewController.xib */,
 			);
 			path = Achievements;
 			sourceTree = "<group>";
@@ -218,7 +234,7 @@
 		B876F5B41852C2B600ED630A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B876F5B31852C2B600ED630A /* chimehack.app */,
+				B876F5B31852C2B600ED630A /* TOT4UNICEF.app */,
 				B876F5D41852C2B600ED630A /* chimehackTests.xctest */,
 			);
 			name = Products;
@@ -303,7 +319,7 @@
 			);
 			name = chimehack;
 			productName = chimehack;
-			productReference = B876F5B31852C2B600ED630A /* chimehack.app */;
+			productReference = B876F5B31852C2B600ED630A /* TOT4UNICEF.app */;
 			productType = "com.apple.product-type.application";
 		};
 		B876F5D31852C2B600ED630A /* chimehackTests */ = {
@@ -334,6 +350,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = Unicef;
 				TargetAttributes = {
+					B876F5B21852C2B600ED630A = {
+						DevelopmentTeam = 7SY3LPYC3G;
+					};
 					B876F5D31852C2B600ED630A = {
 						TestTargetID = B876F5B21852C2B600ED630A;
 					};
@@ -363,7 +382,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B86801031853D89C003E4610 /* UCFAchievementsController.xcassets in Resources */,
 				B86800E518539878003E4610 /* UCFSettingsViewController.xib in Resources */,
+				B86801081853DE7E003E4610 /* UCFBadgesViewController.xib in Resources */,
 				B85F53F31852EDAC0017CB23 /* UCFDonateViewController.xib in Resources */,
 				B85F53F51852EF2F0017CB23 /* UCFDonateViewController.xcassets in Resources */,
 				B86800F91853BA54003E4610 /* UCFCreditCardViewController.xib in Resources */,
@@ -427,10 +448,12 @@
 				B85F53E21852D5C90017CB23 /* UCFSettings.m in Sources */,
 				B86800F41853AE63003E4610 /* UCFService.m in Sources */,
 				B86800EC18539E5B003E4610 /* UCFSendEmailViewController.m in Sources */,
+				B86800FF1853D4B6003E4610 /* UCFAchievementButton.m in Sources */,
 				B86800DE1853976A003E4610 /* UCFAchievementsViewController.m in Sources */,
 				B876F5C31852C2B600ED630A /* main.m in Sources */,
 				B86800E818539CA0003E4610 /* Foundation+UCFAdditions.m in Sources */,
 				B876F5C71852C2B600ED630A /* UCFAppDelegate.m in Sources */,
+				B86801071853DE7E003E4610 /* UCFBadgesViewController.m in Sources */,
 				B86800F018539F64003E4610 /* UCFUnderlinedTextField.m in Sources */,
 				B85F53EC1852ECB10017CB23 /* UCFSignupViewController.m in Sources */,
 				B86800E418539878003E4610 /* UCFSettingsViewController.m in Sources */,
@@ -513,6 +536,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = TOT4UNICEF;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -545,6 +569,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = TOT4UNICEF;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -556,10 +581,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "chimehack/chimehack-Prefix.pch";
 				INFOPLIST_FILE = "chimehack/chimehack-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = TOT4UNICEF;
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -570,10 +598,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "chimehack/chimehack-Prefix.pch";
 				INFOPLIST_FILE = "chimehack/chimehack-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = TOT4UNICEF;
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
