@@ -27,6 +27,7 @@
     
     _amountLabel.highlightedTextColor = [UIColor colorWithWhite:1.0 alpha:0.3];
     
+    // Replace backgroundcolor with image to get highlighting to auto-work
     UIImage *backgroundImage = [UIImage mn_imageWithColor:self.backgroundColor];
     [self setBackgroundImage:backgroundImage forState:UIControlStateNormal];
     

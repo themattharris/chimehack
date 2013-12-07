@@ -7,6 +7,8 @@
 //
 
 #import "UCFAchievementsViewController.h"
+#import "UCFBadgesViewController.h"
+
 #import "UCFAchievementButton.h"
 #import "UCFSettings.h"
 
@@ -52,7 +54,8 @@
 
 - (IBAction)didTapBadgesButton:(id)sender
 {
-    
+    UCFBadgesViewController *controller = [[UCFBadgesViewController alloc] init];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 @end
