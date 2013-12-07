@@ -42,19 +42,15 @@
     
     UIViewController *firstController =self.viewControllers[1];
     self.selectedViewController = firstController;
-    self.navigationItem.title = firstController.title;
+
+    [self tabBarController:self didSelectViewController:firstController];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
-- (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)controller
 {
-    self.navigationItem.title = self.selectedViewController.title;
-    [self setNeedsStatusBarAppearanceUpdate];
+    self.navigationItem.title = controller.title;
+    self.navigationItem.rightBarButtonItem = controller.navigationItem.rightBarButtonItem;
 }
 
 

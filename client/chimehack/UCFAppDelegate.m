@@ -77,6 +77,16 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+- (void)signOut
+{
+    [[UCFSettings sharedInstace] signOut];
+    
+    UCFSignupViewController *controller = [[UCFSignupViewController alloc] init];
+    controller.delegate = self;
+    
+    [_rootNavigationController setViewControllers:@[controller] animated:YES];
+}
+
 - (void)signupViewControllerDidComplete:(UCFSignupViewController *)controller
 {
     UCFMainTabController *tabController = [[UCFMainTabController alloc] init];

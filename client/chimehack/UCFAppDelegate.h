@@ -11,5 +11,6 @@
 @interface UCFAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+- (void)signOut;
 
 @end

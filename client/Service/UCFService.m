@@ -64,8 +64,13 @@
     [self _performPost:@"api/user.json" paramters:parameters completion:^(id result, NSError *error) {
         if (result) {
             NSString *userId = result[@"id"];
+            NSString *userName = result[@"name"];
+            
             if (userId) {
                 [[UCFSettings sharedInstace] setSignedInUserId:userId];
+            }
+            if (userName) {
+                [[UCFSettings sharedInstace] setSignedInUserName:userName];
             }
         }
         if (completion) completion(result, error);

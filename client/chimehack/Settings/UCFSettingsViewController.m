@@ -8,6 +8,9 @@
 
 #import "UCFSettingsViewController.h"
 
+#import "UCFSettings.h"
+#import "UCFAppDelegate.h"
+
 @interface UCFSettingsViewController ()
 
 @end
@@ -35,6 +38,11 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)didTapSignout:(id)sender
+{
+    [self sendAction:@selector(signOut)];
 }
 
 @end
