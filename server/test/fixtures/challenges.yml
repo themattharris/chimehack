@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyString
+  target: 
+  currency: 
+  current: 
+  target_date: 2013-12-06 18:40:11
+  creator_id: 
+  team_id: 
+
+two:
+  name: MyString
+  description: MyString
+  target: 
+  currency: 
+  current: 
+  target_date: 2013-12-06 18:40:11
+  creator_id: 
+  team_id: 

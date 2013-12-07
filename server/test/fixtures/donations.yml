@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  donor_id: 
+  cause_id: 
+  currency: 
+  value: 
+  referrer_id: 
+  transaction_id: MyString
+  transaction_source_id: 
+
+two:
+  donor_id: 
+  cause_id: 
+  currency: 
+  value: 
+  referrer_id: 
+  transaction_id: MyString
+  transaction_source_id: 
