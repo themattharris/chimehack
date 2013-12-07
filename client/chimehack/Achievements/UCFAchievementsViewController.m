@@ -10,6 +10,7 @@
 #import "UCFBadgesViewController.h"
 
 #import "UCFAchievementButton.h"
+#import "UCFService.h"
 #import "UCFSettings.h"
 
 @interface UCFAchievementsViewController ()
@@ -33,6 +34,8 @@
     self.title = NSLocalizedString(@"Achievements", nil);
     self.tabBarItem = [UITabBarItem ucf_tabBarItemWithBaseName:@"tabbar-star" title:self.title];
     
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(_didTapReloadButton:)];
+    
     return self;
 }
 
@@ -41,23 +44,59 @@
     [super viewDidLoad];
     
     _headerLabel.attributedText = [NSAttributedString ucf_trickOrTreatString];
-    _nameLabel.text = [[UCFSettings sharedInstace] signedInUserName];
     
-    [self _updateAchievementsWithData:nil];
+    [self _updateNameLabelWith:[[UCFSettings sharedInstace] signedInUserName]];
+    
+    [self _reloadAchievementsData];
+}
+
+- (void)_reloadAchievementsData
+{
+    id referredId = [[UCFSettings sharedInstace] signedInUserId];
+    
+    self.navigationItem.rightBarButtonItem.enabled = NO;
+    __weak typeof(self) weakSelf = self;
+    [[UCFService sharedInstance] fetchDonationsByReferer:referredId completion:^(id result, NSError *error) {
+        self.navigationItem.rightBarButtonItem.enabled = YES;
+        if (error) {
+            [self ucf_presentErrorMessage:error.localizedDescription];
+        } else {
+            [weakSelf _updateAchievementsWithData:result];
+        }
+    }];
+}
+
+
+- (void)_updateNameLabelWith:(NSString *)name
+{
+    _nameLabel.text = name;
 }
 
 - (void)_updateAchievementsWithData:(NSDictionary *)data
 {
+    NSDictionary *firstDonation = [[data valueForKeyPath:@"donations"] firstObject];
+    NSString *userName = [firstDonation valueForKeyPath:@"referrer.name"];
+    [self _updateNameLabelWith:userName];
+    
+    NSNumber *donationsCount = data[@"count"] ?: @0;
+    _donationsButton.amountLabel.text = donationsCount.stringValue;
+
     _donorButton.amountLabel.text = @"8";
-    _donationsButton.amountLabel.text = @"200";
+    
     _linksButton.amountLabel.text = @"12";
     _badgesButton.amountLabel.text = @"7";
+
 }
 
 - (IBAction)didTapBadgesButton:(id)sender
 {
     UCFBadgesViewController *controller = [[UCFBadgesViewController alloc] init];
     [self.navigationController pushViewController:controller animated:YES];
+}
+
+- (void)_didTapReloadButton:(id)sender
+{
+    [self _reloadAchievementsData];
 }
 
 @end
