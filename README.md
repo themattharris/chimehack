@@ -1,31 +1,34 @@
-# chimehack
-project for the unicef trick or treat project.
+# TOT4UNICEF
+Students can now accept digital payments as they Trick or Treat for UNICEF! We've included a seamless credit card option for instant transactions, but haven't forgotten about our donors who love their checkbook. Children are encouraged through various achievements and badges, which range from easy to hard, and fun to educational.
 
-## project layout
+# License
+Licensed under The MIT License (MIT).
+
+## Project Layout
 * **server**: the rails server component
 * **client**: the mobile application
 
-## installation
-### server
+## Installation
+### Server
 * requires ruby 1.9+ and rails 4
   * rvm install 1.9
   * rvm gemset create chimehack
   * rvm use 1.9@chimehack --create
   * gem install bundler
   * bundle
-* install mysql 5.5+ (http://dev.mysql.com/downloads/mysql/5.5.html)
+* Install mysql 5.5+ (http://dev.mysql.com/downloads/mysql/5.5.html)
   * make sure username is **root**
   * make sure password is **blank**
-* create the databases
+* Create the databases
   * rake db:create
   * rake db:mirate
-* start server
+* Start server
   * rails server
 
-### client
+### Client
 * requires XCode 5.5
 
-## resources
+## Resources
 * web and iphone flows (Phase 1): https://drive.google.com/#folders/0B7yysWiQbKCkUUNqc3QxYWUyN2c
 * online production-ish version: http://chimehack.tokofu.net
   * _it's running in dev mode so be aware that it will show more debug information_
