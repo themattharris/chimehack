@@ -21,7 +21,7 @@ end
 
 class User < ActiveRecord::Base
   has_many :teams
-  has_many :donations
+  has_many :donations, :foreign_key => :referrer_id
   has_many :challenges
 
   has_and_belongs_to_many :teams
@@ -30,6 +30,10 @@ class User < ActiveRecord::Base
   validates :email, uniqueness: true, email: true, allow_nil: true
   validates :phone, phone: true, allow_nil: true
   validate :phone_or_email_set
+
+  def total_donations
+    (donations.inject(0.0) {|sum, d| d.value + sum }).floor
+  end
 
   def has_contact_info?
     has_email? || has_phone?

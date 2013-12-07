@@ -1,7 +1,9 @@
 <div class="centered">
   <%= image_tag "social-btns.jpg" -%>
   <div class="circle pad_photo"></div>
-  <h5>Allison's raised <br /><strong>$30</strong> of the <strong>$500</strong> goal</h5>
+  <h5><%= @user.name -%>'s raised <br /><strong>
+      $<%= @user.total_donations -%>
+  </strong> of the <strong>$500</strong> goal</h5>
 </div>
 
 <table class="table table-hover leaderboard">
@@ -44,11 +46,11 @@
     </tr>
     <tr>
       <td class='align-left'>Jacob T.</td>
-      <td class='align-right'>$235</td>
+      <td class='align-right'>$1235</td>
     </tr>
     <tr>
-      <td class='align-left'>Allison B.</td>
-      <td class='align-right'>$30</td>
+      <td class='align-left'><%= @user.name -%></td>
+      <td class='align-right'>$<%= @user.total_donations -%></td>
     </tr>
     </tbody>
   </table>
