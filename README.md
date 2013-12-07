@@ -100,30 +100,23 @@ project for the unicef trick or treat project.
 * **response**:
 `{
   "total_value": 15.0,
-  "count": 2,
+  "count": 1,
   "donations": [
     {
       "currency": "USD",
-      "value": "5.0",
+      "value": "15.0",
       "donor": {
-        "id": 1,
+        "id": 2,
         "name": "themattharris"
       },
       "referrer": {
-        "id": 2,
-        "name": "cindyli"
-      }
-    },
-    {
-      "currency": "USD",
-      "value": "10.0",
-      "donor": {
         "id": 1,
-        "name": "themattharris"
+        "name": "allison l"
       },
-      "referrer": {
-        "id": 2,
-        "name": "cindyli"
+      "challenge": {
+        "name": "chimehack",
+        "target": "500.0",
+        "current": "200.0"
       }
     }
   ]
@@ -136,7 +129,7 @@ project for the unicef trick or treat project.
 * **params**:
   * `referrer_id`: integer : required
 * **example**
-  * `/api/donations/for_referrer.json?id=2`
+  * `/api/donations/for_referrer.json?id=1`
 * **response**:
 `{
   "total_value": 15.0,
@@ -144,26 +137,36 @@ project for the unicef trick or treat project.
   "donations": [
     {
       "currency": "USD",
-      "value": "5.0",
+      "value": "50.0",
       "donor": {
-        "id": 1,
-        "name": "themattharris"
+        "id": 8,
+        "name": "greentea"
       },
       "referrer": {
-        "id": 2,
-        "name": "cindyli"
+        "id": 1,
+        "name": "allison l"
+      },
+      "challenge": {
+        "name": "chimehack",
+        "target": "500.0",
+        "current": "200.0"
       }
     },
     {
       "currency": "USD",
-      "value": "10.0",
+      "value": "25.0",
       "donor": {
-        "id": 1,
-        "name": "themattharris"
+        "id": 9,
+        "name": "coffeeandtv"
       },
       "referrer": {
-        "id": 2,
-        "name": "cindyli"
+        "id": 1,
+        "name": "allison l"
+      },
+      "challenge": {
+        "name": "chimehack",
+        "target": "500.0",
+        "current": "200.0"
       }
     }
   ]
