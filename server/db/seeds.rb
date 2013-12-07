@@ -9,7 +9,7 @@
 
 users = User.create([
   {
-    name: 'allison l',
+    name: 'Allison L',
     email: 'allison@me.com'
   },
   {
@@ -21,7 +21,7 @@ users = User.create([
     email: 'cindyli@ymyemail.net'
   },
   {
-    name: 'pinky parker',
+    name: 'Pinky Parker',
     email: 'parker@myemail.net'
   },
   {
