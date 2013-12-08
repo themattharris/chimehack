@@ -1,7 +1,11 @@
 <div class="centered">
   <%= image_tag "social-btns.jpg" -%>
   <div class="circle pad_photo"></div>
-  <h5>Allison's raised <br /><strong>$30</strong> of the <strong>$500</strong> goal</h5>
+  <h5><%= @user.name -%>'s raised <br /><strong>
+      $<%= @user.total_referrals.floor -%>
+    </strong> of the <strong>
+      $<%= @challenge.target.floor -%>
+  </strong> goal</h5>
 </div>
 
 <h2>Enter an amount *</h2>
