@@ -13,8 +13,8 @@ Server::Application.routes.draw do
 
   get 'admin' => 'admin#index'
   get 'team/:id' => 'teams#profile'
-  get 'donations/new' => 'donations#new'
   get 'donations/thanks' => 'donations#thanks'
+  resources :donations
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   namespace :admin do

@@ -5,7 +5,7 @@
 </div>
 
 <h2>Enter an amount *</h2>
-<form role="form" style="max-width: 500px">
+<%= form_tag("/donations") do %>
   <div class="input-group">
     <span class="input-group-addon">$</span>
     <input type="text" id="donation_amount" style="width: 100px;" name="amount" class="form-control" placeholder="amount" pattern="\d*">
@@ -24,7 +24,14 @@
     <div class="control-group">
       <label class="control-label"  for="username">Card Holder's Name</label>
       <div class="controls">
-        <input type="text" id="username" name="username" class="form-control" placeholder="Name">
+        <input type="text" id="cardholder" name="cardholder" class="form-control" placeholder="Name">
+      </div>
+    </div>
+
+    <div class="control-group">
+      <label class="control-label"  for="email">Email</label>
+      <div class="controls">
+        <input type="text" id="email" name="email" class="form-control" placeholder="Name">
       </div>
     </div>
 
@@ -87,10 +94,10 @@
     <!-- Submit -->
     <div class="control-group">
       <div class="controls">
-        <a class="btn btn-success" href="/donations/thanks">Pay Now</a>
+        <button type="submit" class="btn btn-success">Pay Now</button>
       </div>
     </div>
 
   </fieldset>
-</form>
+<%end-%>
 
