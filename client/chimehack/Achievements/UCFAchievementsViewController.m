@@ -81,7 +81,8 @@
     NSNumber *donationsCount = data[@"count"] ?: @0;
     _donationsButton.amountLabel.text = donationsCount.stringValue;
 
-    _donorButton.amountLabel.text = @"8";
+    NSNumber *donorCount = data[@"unique_donors"] ?: @0;
+    _donorButton.amountLabel.text = [donorCount stringValue];
     
     _linksButton.amountLabel.text = @"12";
     _badgesButton.amountLabel.text = @"7";

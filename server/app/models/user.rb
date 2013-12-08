@@ -21,7 +21,8 @@ end
 
 class User < ActiveRecord::Base
   has_many :teams
-  has_many :donations, :foreign_key => :referrer_id
+  has_many :referrals, :foreign_key => :referrer_id, :class_name => 'Donation'
+  has_many :donations, :foreign_key => :donor_id
   has_many :challenges
 
   has_and_belongs_to_many :teams
@@ -31,8 +32,12 @@ class User < ActiveRecord::Base
   validates :phone, phone: true, allow_nil: true
   validate :phone_or_email_set
 
+  def total_referrals
+    self.referrals.inject(0.0) {|sum, d| d.value + sum }
+  end
+
   def total_donations
-    donations.inject(0.0) {|sum, d| d.value + sum }
+    self.donations.inject(0.0) {|sum, d| d.value + sum }
   end
 
   def has_contact_info?

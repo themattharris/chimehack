@@ -50,11 +50,11 @@
                     <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$20 provides vaccines for 10 children" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ehe-c1-cqr">
-                    <rect key="frame" x="20" y="289" width="280" height="27"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$20 provides vaccines for 10 children" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="ehe-c1-cqr">
+                    <rect key="frame" x="20" y="289" width="280" height="39"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="27" id="YA6-05-tyz"/>
+                        <constraint firstAttribute="height" constant="39" id="YA6-05-tyz"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
                     <nil key="highlightedColor"/>
@@ -141,7 +141,7 @@
                 <constraint firstItem="ehe-c1-cqr" firstAttribute="top" secondItem="Iqv-Kk-dNc" secondAttribute="bottom" constant="8" symbolic="YES" id="OJt-zO-wnO"/>
                 <constraint firstItem="Iqv-Kk-dNc" firstAttribute="trailing" secondItem="6hl-bM-fND" secondAttribute="trailing" id="Orf-OY-Ar2"/>
                 <constraint firstItem="6hl-bM-fND" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="33" id="RCK-WM-1qB"/>
-                <constraint firstItem="iKe-m1-SOd" firstAttribute="top" secondItem="ehe-c1-cqr" secondAttribute="bottom" constant="32" id="RbR-7a-9DC"/>
+                <constraint firstItem="iKe-m1-SOd" firstAttribute="top" secondItem="ehe-c1-cqr" secondAttribute="bottom" constant="20" id="RbR-7a-9DC"/>
                 <constraint firstAttribute="trailing" secondItem="6hl-bM-fND" secondAttribute="trailing" constant="40" id="S06-1z-RTl"/>
                 <constraint firstItem="9J7-il-VCw" firstAttribute="trailing" secondItem="LFv-di-umQ" secondAttribute="trailing" id="T96-Y7-411"/>
                 <constraint firstItem="6hl-bM-fND" firstAttribute="centerX" secondItem="iKe-m1-SOd" secondAttribute="centerX" id="VHo-bV-0XY"/>
