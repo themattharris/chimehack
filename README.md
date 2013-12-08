@@ -29,9 +29,8 @@ Licensed under The MIT License (MIT).
 * requires XCode 5.5
 
 ## Resources
-* web and iphone flows (Phase 1): https://drive.google.com/#folders/0B7yysWiQbKCkUUNqc3QxYWUyN2c
 * online production-ish version: http://chimehack.tokofu.net
-  * _it's running in dev mode so be aware that it will show more debug information_
+  * _this was only available for the hackevent. it's been disabled for now. but you can run the site locally to see how it worked_
 * if you need to refresh the local database use `rake db:reseed`
 
 ## API
