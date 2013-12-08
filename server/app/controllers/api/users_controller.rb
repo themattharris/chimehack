@@ -1,7 +1,7 @@
 class Api::UsersController < ApiController
 
   def create
-    if (@user = User.find_by_email(params[:email]))
+    if (@user = User.find_by_email(params[:email].downcase))
       render_user_json
     else
       @user = User.new(permitted_params)
