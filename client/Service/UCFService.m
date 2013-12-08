@@ -83,5 +83,10 @@
     [self _performGet:@"donations/for_referrer.json" paramters:parameters completion:completion];
 }
 
+- (void)fetchIncentivesWithCompletion:(UCFServiceCompletionBlock)completion
+{
+    [self _performGet:@"incentives.json" paramters:nil completion:completion];
+}
+
 
 @end

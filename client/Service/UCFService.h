@@ -17,4 +17,5 @@ typedef void (^UCFServiceCompletionBlock)(id result, NSError *error);
 - (void)signupWithName:(NSString *)name email:(NSString *)email completion:(UCFServiceCompletionBlock)completion;
 - (void)fetchDonationsByReferer:(id)referredId completion:(UCFServiceCompletionBlock)completion;
 
+- (void)fetchIncentivesWithCompletion:(UCFServiceCompletionBlock)completion;
 @end

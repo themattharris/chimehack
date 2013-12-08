@@ -21,9 +21,14 @@
 @property (strong, nonatomic) IBOutlet UILabel *valuationLabel;
 @property (weak, nonatomic) IBOutlet UISlider *valueSlider;
 
+@property(nonatomic,strong)NSArray *incentives;
 @end
 
 @implementation UCFDonateViewController
+{
+    NSInteger _lastSliderStep;
+    NSInteger _stepValue;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -34,6 +39,8 @@
     self.tabBarItem = [UITabBarItem ucf_tabBarItemWithBaseName:@"tabbar-unicef" title:self.title];
 
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(_didTapReloadButton:)];
+    
+    _incentives = [NSArray array];
 
     return self;
 }
@@ -50,14 +57,20 @@
     
     NSString *userName = [[UCFSettings sharedInstace] signedInUserName];
     [self _updateNameLabelWith:userName];
+    
+    _stepValue = roundf(self.valueSlider.maximumValue / 5.0);
+    _lastSliderStep = 0;
+    self.valueSlider.value = 0;
+    
+    __weak typeof(self) weakSelf = self;
+    [[UCFService sharedInstance] fetchIncentivesWithCompletion:^(id result, NSError *error) {
+        if (!error) {
+            [weakSelf setIncentives:result];
+            [weakSelf didChangeSliderValue:self.valueSlider];
+        }
+    }];
 
     [self _reloadViewData];
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-
 }
 
 - (void)_reloadViewData
@@ -67,6 +80,7 @@
     self.navigationItem.rightBarButtonItem.enabled = NO;
     
     __weak typeof(self) weakSelf = self;
+    
     [[UCFService sharedInstance] fetchDonationsByReferer:referrerId completion:^(id result, NSError *error) {
         weakSelf.navigationItem.rightBarButtonItem.enabled = YES;
         [weakSelf _updateViewWithData:result];
@@ -77,6 +91,19 @@
 {
     NSString *nameString = [NSString stringWithFormat:NSLocalizedString(@"%@ raised", nil), name];
     _nameLabel.text = nameString;
+}
+
+- (void)_updateValuationLabelForStep:(NSInteger)step
+{
+    if (!_incentives || step >= _incentives.count) {
+        _valuationLabel.text = nil;
+    } else {
+        NSDictionary *incentive = [_incentives objectAtIndex:step];
+        NSString *description = incentive[@"description"];
+        NSNumber *value = incentive[@"value"];
+        NSString *text = [NSString stringWithFormat:@"$%@ - %@", value, description];
+        _valuationLabel.text = text ;
+    }
 }
 
 - (void)_updateViewWithData:(NSDictionary *)data
@@ -98,7 +125,12 @@
     [self _reloadViewData];
 }
 
-- (IBAction)didChangeSliderValue:(id)sender {
+- (IBAction)didChangeSliderValue:(id)sender
+{
+    int newStep = roundf(self.valueSlider.value / _stepValue);
+    self.valueSlider.value = newStep * _stepValue;
+    
+    [self _updateValuationLabelForStep:newStep];
 }
 
 
